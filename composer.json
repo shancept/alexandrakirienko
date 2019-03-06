@@ -1,0 +1,13 @@
+{
+    "name": "shancept/alexandrakirienko",
+    "authors": [
+        {
+            "name": "Shancept",
+            "email": "shancept@yandex.ru"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {"": "api/"}
+    }
+}
