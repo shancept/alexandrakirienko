@@ -6,44 +6,50 @@
  * Time: 0:32
  */
 
+namespace classes;
+
 /**
- * Class DB
+ * Class Db
  */
-final class DB
+final class Db
 {
     /**
-     * Хранит инстанс класса
-     * @var DB
+     * @param array $config
+     * @return string
      */
-    private static $instance;
-
-    /**
-     * DB constructor.
-     * @param $param
-     */
-    public function __construct($param)
+    public static function getDsn($config)
     {
-
-    }
-
-    /**
-     * Отключение клона
-     */
-    public function __clone(){}
-
-
-    /**
-     * Получить инстанс класса
-     */
-    public static function getInstance()
-    {
-
+        return $config['mysql'].';dbname='.$config['dbname'];
     }
 
     /**
      * Соединение с базой даных
+     * @param array $config
+     * @return boolean | \PDO
      */
-    public function DBConnect() {
+    public static function dBConnect($config)
+    {
+        try {
+            return new \PDO(self::getDsn($config), $config['user'], $config['pass'], [
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+            ]);
+        } catch (\Exception $e) {
+            return false;
+        }
+    }
 
+    /**
+     * @param array $config
+     * @return \PDO
+     */
+    public static function mySqlConnect($config)
+    {
+        try {
+            return new \PDO($config['mysql'], $config['user'], $config['pass'], [
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+            ]);
+        } catch (\PDOException $e) {
+            die('Ошибка подключения к базе данных: '.$e->getMessage().PHP_EOL);
+        }
     }
 }
