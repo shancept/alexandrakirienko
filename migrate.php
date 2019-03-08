@@ -22,6 +22,16 @@ $create_db_sql = "CREATE DATABASE `$db_name`;
             CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
             GRANT ALL ON `$db_name`.* TO '$user'@'localhost';
             FLUSH PRIVILEGES;";
+$create_users_table = "CREATE TABLE `users` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `surname` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `instagram` varchar(255) DEFAULT NULL,
+  `date_create` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 $drop_data_base = "DROP DATABASE `$db_name`";
 
 
@@ -37,8 +47,17 @@ if($argv[1] === 'drop_data_base') {
 
 try {
     $mysql->exec($create_db_sql);
-    //todo таблица пользователи
     echo "Create data base $db_name".PHP_EOL;
+} catch (PDOException $e) {
+    die("DB ERROR: ". $e->getMessage().PHP_EOL);
+}
+
+$db = \classes\Db::dBConnect($config_db);
+
+try {
+    $db->exec($create_users_table);
+    echo "Create table users".PHP_EOL;
+    //todo таблица услуги
 } catch (PDOException $e) {
     die("DB ERROR: ". $e->getMessage().PHP_EOL);
 }
