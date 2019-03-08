@@ -6,6 +6,16 @@
  * Time: 0:09
  */
 
+//todo убрать в продакшне
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 require(__DIR__ . '/vendor/autoload.php');
+
+$config = include_once(__DIR__.'/config.php');
+
+\classes\Db::dBConnect($config['db']);
+
+//\models\Users::addUser('Igor2', '+7192931932', 'qwe', 'qwe', 'qwe@qwe.qwe');
 
 require_once 'dist/index.html';
