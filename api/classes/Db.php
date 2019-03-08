@@ -13,13 +13,15 @@ namespace classes;
  */
 final class Db
 {
+    private static $dbh;
+
     /**
      * @param array $config
      * @return string
      */
     public static function getDsn($config)
     {
-        return $config['mysql'].';dbname='.$config['dbname'];
+        return $config['mysql'] . ';dbname=' . $config['dbname'];
     }
 
     /**
@@ -30,9 +32,10 @@ final class Db
     public static function dBConnect($config)
     {
         try {
-            return new \PDO(self::getDsn($config), $config['user'], $config['pass'], [
+            self::$dbh = new \PDO(self::getDsn($config), $config['user'], $config['pass'], [
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
             ]);
+            return self::$dbh;
         } catch (\Exception $e) {
             return false;
         }
@@ -49,7 +52,12 @@ final class Db
                 \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
             ]);
         } catch (\PDOException $e) {
-            die('Ошибка подключения к базе данных: '.$e->getMessage().PHP_EOL);
+            die('Ошибка подключения к базе данных: ' . $e->getMessage() . PHP_EOL);
         }
+    }
+
+    public static function getDbh()
+    {
+        return self::$dbh;
     }
 }
