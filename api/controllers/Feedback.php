@@ -11,6 +11,7 @@ namespace controllers;
 
 use classes\Request;
 use classes\Response;
+use \models\Feedback as MFeedback;
 
 class Feedback
 {
@@ -20,7 +21,18 @@ class Feedback
      */
     public static function actionIndex($request, $response)
     {
-        $response->setContent('hello');
+        //todo $request->isXmlHttpRequest() $request->isMethod('post')
+        $post = $request->request;
+        $answer = MFeedback::addFeedback(
+            $post->get('name'),
+            $post->get('phone'),
+            $post->get('message'),
+            $post->get('email'),
+            $post->get('city')) ?
+            ['result' => 'success'] :
+            ['result' => 'error'];
+        //todo  отправка на почту
+        $response->setContent(json_encode($answer));
         $response->send();
     }
 }
