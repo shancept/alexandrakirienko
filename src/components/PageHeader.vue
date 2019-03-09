@@ -57,6 +57,7 @@
         }
         &__row {
             .row-flex();
+            justify-content: space-between;
             .md-block({ flex-direction: column; justify-content: center; });
             align-items: center;
         }
@@ -66,10 +67,9 @@
 
             &--social {
                 display: flex;
-                justify-content: center;
                 min-width: 140px;
                 padding: 20px 0;
-                .md-block({ order: 1; });
+                .md-block({ order: 1; justify-content: center;});
 
                 a {
                     margin: 0 5px;
@@ -78,14 +78,12 @@
             &--logo {
                 .size(3);
                 min-width: 250px;
-                margin: 0 auto;
                 padding-bottom: 20px;
 
             }
             &--write {
                 width: 140px;
-                margin-left: auto;
-                .md-block({ order: 2; margin: 0; });
+                .md-block({ order: 2; });
             }
             &--nav {
                 .size(12);
