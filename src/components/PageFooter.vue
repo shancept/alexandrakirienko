@@ -1,10 +1,10 @@
 <template>
-    <main>Тело</main>
+    <footer>Подвал</footer>
 </template>
 
 <script>
     export default {
-        name: "page-content"
+        name: "PageFooter"
     }
 </script>
 
