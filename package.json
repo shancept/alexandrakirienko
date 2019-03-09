@@ -23,6 +23,7 @@
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
     "smart-grid": "^2.1.2",
+    "style-resources-loader": "^1.2.1",
     "vue-template-compiler": "^2.5.21"
   }
 }

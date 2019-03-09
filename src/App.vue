@@ -1,40 +1,56 @@
 <template>
-  <div id="app">
-    <div class="block">
-      <div class="row">
-        <div class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet animi assumenda consequatur deleniti, dicta dolores eum id libero maxime nemo numquam officiis provident qui recusandae repellat sit temporibus voluptate.</div>
-        <div class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aliquam, nisi officia quo veritatis. Cupiditate delectus dolore doloribus facilis fugit itaque, iure labore libero quia vel veritatis vitae, voluptate.</div>
-        <div class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aperiam culpa cupiditate delectus deserunt doloribus, error ex expedita fugiat iste laborum numquam omnis repellendus suscipit ut! Est natus omnis sunt?</div>
-      </div>
+    <div id="app" class="app">
+        <PageHeader class="app__header"/>
+        <PageContent class="app__main"/>
+        <PageFooter class="app__footer"/>
     </div>
-  </div>
 </template>
 
+<script>
+    import PageHeader from './components/page-header';
+    import PageContent from './components/page-content';
+    import PageFooter from './components/page-footer';
+
+
+    export default {
+        name: "App",
+        components: {
+            PageHeader,
+            PageContent,
+            PageFooter
+        },
+        data() {
+            return {
+                data: {}
+            }
+        },
+        methods: {},
+        computed: {}
+    }
+</script>
+
 <style lang="less">
-  @import "./assets/fonts/font.css";
-  @import "./assets/global/normalize.css";
-  @import "./assets/global/variables.less";
-  @import "./assets/global/mixins.less";
-  @import "./assets/global/scaffolding.less";
-  @import "./assets/global/smart-grid.less";
+    @import "./assets/fonts/font.css";
+    @import "./assets/global/normalize.css";
+    @import "./assets/global/scaffolding.less";
 
-  body {
-    font-size: 18px;
-    color: #302d34;
-    line-height: 1.55;
-    font-weight: 300;
-  }
+    .app {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
 
-  .block {
-    .wrapper();
-  }
+        &__header {
+            //.block();
+        }
 
-  .row {
-    .row-flex();
-  }
+        &__main {
+            flex: auto;
+            .block();
+        }
 
-  .col {
-    .col();
-    .size(4);
-  }
+        &__footer {
+            flex-shrink: 0;
+            .block();
+        }
+    }
 </style>
