@@ -35,4 +35,12 @@ class Users extends Models
         }
     }
 
+    public static function getAll()
+    {
+        $sql = "SELECT * FROM `users`";
+        $sth = self::model()->db->prepare($sql);
+        $sth->execute();
+        return $sth->fetchAll();
+    }
+
 }
