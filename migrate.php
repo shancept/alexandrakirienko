@@ -40,6 +40,7 @@ $create_courses_table = "CREATE TABLE `courses` (
   `price` float NOT NULL,
   `price_for_sale` float DEFAULT NULL,
   `product_identifier` varchar(12) NOT NULL DEFAULT '',
+  `page` varchar(255) NOT NULL DEFAULT '',
   `active` tinyint(11) DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `product_identifier` (`product_identifier`)
