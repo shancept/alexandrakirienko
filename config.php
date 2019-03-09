@@ -12,5 +12,6 @@ return [
         'dbname' => 'alex',
         'user' => 'root',
         'pass' => 'root',
-    ]
+    ],
+    'base_path' => __DIR__
 ];
