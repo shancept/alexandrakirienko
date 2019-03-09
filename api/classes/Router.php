@@ -9,6 +9,7 @@
 namespace classes;
 
 
+use controllers\Courses;
 use controllers\Feedback;
 
 class Router
@@ -31,6 +32,8 @@ class Router
         }
         if ($path_info === '/api/feedback') {
             Feedback::actionIndex($this->request, $this->response);
+        } elseif ($path_info === '/api/courses') {
+            Courses::actionIndex($this->request, $this->response);
         } else {
             require_once $config['base_path'] . '/dist/index.html';
         }
