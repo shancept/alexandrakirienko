@@ -21,7 +21,7 @@ final class Db
      */
     public static function getDsn($config)
     {
-        return $config['mysql'] . ';dbname=' . $config['dbname'];
+        return $config['mysql'] . ';dbname=' . $config['dbname'] . ';charset=utf8';
     }
 
     /**

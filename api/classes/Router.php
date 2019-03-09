@@ -26,7 +26,10 @@ class Router
     public function init($config)
     {
         $path_info = $this->request->getPathInfo();
-        if ($path_info === '/feedback') {
+        if($path_info !== '/') {
+            Db::dBConnect($config['db']);
+        }
+        if ($path_info === '/api/feedback') {
             Feedback::actionIndex($this->request, $this->response);
         } else {
             require_once $config['base_path'] . '/dist/index.html';

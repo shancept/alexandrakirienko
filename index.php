@@ -14,6 +14,4 @@ require(__DIR__ . '/vendor/autoload.php');
 
 $config = include_once(__DIR__.'/config.php');
 
-\classes\Db::dBConnect($config['db']);
-
 (new \classes\Router())->init($config);
