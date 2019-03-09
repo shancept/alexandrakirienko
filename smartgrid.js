@@ -40,4 +40,4 @@ var settings = {
     properties: []
 };
 
-smartgrid('./src/assets/mixins/', settings);
+smartgrid('./src/assets/imports/', settings);
