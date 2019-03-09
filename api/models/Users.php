@@ -42,5 +42,4 @@ class Users extends Models
         $sth->execute();
         return $sth->fetchAll();
     }
-
 }
