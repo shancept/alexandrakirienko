@@ -16,6 +16,4 @@ $config = include_once(__DIR__.'/config.php');
 
 \classes\Db::dBConnect($config['db']);
 
-//\models\Users::addUser('Igor2', '+7192931932', 'qwe', 'qwe', 'qwe@qwe.qwe');
-
-require_once 'dist/index.html';
+(new \classes\Router())->init($config);
