@@ -6,7 +6,9 @@
             "email": "shancept@yandex.ru"
         }
     ],
-    "require": {},
+    "require": {
+        "symfony/http-foundation": "^3.4"
+    },
     "autoload": {
         "psr-4": {"": "api/"}
     }
