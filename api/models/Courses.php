@@ -48,4 +48,13 @@ class Courses extends Models
         $sth->execute();
         return $sth->fetch();
     }
+
+    public static function getById($id)
+    {
+        $sql = "SELECT * FROM `courses` WHERE `id` = :id";
+        $sth = self::model()->db->prepare($sql);
+        $sth->bindParam(':id', $id);
+        $sth->execute();
+        return $sth->fetch();
+    }
 }

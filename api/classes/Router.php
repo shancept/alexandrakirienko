@@ -11,6 +11,7 @@ namespace classes;
 
 use controllers\Courses;
 use controllers\Feedback;
+use controllers\Payments;
 
 class Router
 {
@@ -27,15 +28,26 @@ class Router
     public function init($config)
     {
         $path_info = $this->request->getPathInfo();
-        if($path_info !== '/') {
+        if ($path_info !== '/') {
             Db::dBConnect($config['db']);
         }
-        if ($path_info === '/api/feedback') {
-            Feedback::actionIndex($this->request, $this->response);
-        } elseif ($path_info === '/api/courses') {
-            Courses::actionIndex($this->request, $this->response);
+        $path_info_array = array_filter(explode('/', $path_info), function ($elem) {
+            return $elem !== '';
+        });
+
+        $first_param = array_shift($path_info_array);
+        if ($first_param == 'api') {
+            $next_param = array_shift($path_info_array);
+            if ($next_param === 'feedback') {
+                Feedback::actionIndex($this->request, $this->response);
+            } elseif ($next_param === 'courses') {
+                Courses::actionIndex($this->request, $this->response);
+            } elseif ($next_param === 'payments') {
+                Payments::actionIndex($this->request, $this->response);
+            }
         } else {
             require_once $config['base_path'] . '/dist/index.html';
         }
+        die;
     }
 }
