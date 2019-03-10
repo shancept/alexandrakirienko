@@ -7,9 +7,9 @@
 </template>
 
 <script>
-    import PageHeader from './components/PageHeader';
-    import PageContent from './components/PageContent';
-    import PageFooter from './components/PageFooter';
+    import PageHeader from './components/pages/PageHeader';
+    import PageContent from './components/pages/PageContent';
+    import PageFooter from './components/pages/PageFooter';
 
     export default {
         name: "App",
@@ -39,12 +39,10 @@
         flex-direction: column;
 
         &__header {
-
         }
 
         &__main {
             flex: auto;
-            .block();
         }
 
         &__footer {

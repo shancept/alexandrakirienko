@@ -18,7 +18,7 @@
                 </div>
                 <div class="page-header__item  page-header__item--logo">
                     <a href="#">
-                        <img src="./../assets/img/Header/logo.png" alt="logo">
+                        <img src="./../../assets/img/Header/logo.png" alt="logo">
                     </a>
                 </div>
                 <div class="page-header__item  page-header__item--write">
@@ -33,9 +33,9 @@
 </template>
 
 <script>
-    import Btn from './Btn';
-    import SocialLink from './SocialLink';
-    import MainNav from './MainNav';
+    import Btn from './../blocks/Btn';
+    import SocialLink from './../blocks/SocialLink';
+    import MainNav from './../blocks/MainNav';
 
     export default {
         name: "PageHeader",

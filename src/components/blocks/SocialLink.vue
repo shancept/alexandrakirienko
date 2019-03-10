@@ -28,15 +28,15 @@
         text-indent: -9999px;
 
         &--facebook {
-            background-image: url('../assets/img/SocialLink/facebook.svg');
+            background-image: url('../../assets/img/SocialLink/facebook.svg');
         }
 
         &--youtube {
-            background-image: url('../assets/img/SocialLink/youtube.svg');
+            background-image: url('../../assets/img/SocialLink/youtube.svg');
         }
 
         &--instagram {
-            background-image: url('../assets/img/SocialLink/instagram.svg');
+            background-image: url('../../assets/img/SocialLink/instagram.svg');
         }
     }
 </style>
