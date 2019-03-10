@@ -21,10 +21,10 @@ class Payments
      */
     public static function actionIndex($request, $response)
     {
-        if(!$request->isXmlHttpRequest()) {
+        if (!$request->isXmlHttpRequest()) {
             return;
         }
-        if($request->isMethod('post')) {
+        if ($request->isMethod('post')) {
             $post = $request->request;
             $answer = MPayments::addPayment(
                 $post->get('user_id'),
@@ -36,9 +36,17 @@ class Payments
             $response->setContent(json_encode($answer));
             $response->send();
         } elseif ($request->isMethod('put')) {
-            $put = $request->getContent();
-            parse_str($put, $put);
-            //todo я тут
+            parse_str($request->getContent(), $put);
+            //todo переделать определение статусов
+            if (isset($put['status']) && isset($put['payment_id'])) {
+                $answer = MPayments::changeStatusById(
+                    $put['payment_id'],
+                    $put['status']) ?
+                    ['result' => 'success'] :
+                    ['result' => 'error'];
+                $response->setContent(json_encode($answer));
+                $response->send();
+            }
         }
     }
 }
