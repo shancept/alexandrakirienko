@@ -22,6 +22,7 @@ $create_db_sql = "CREATE DATABASE `$db_name`;
             CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
             GRANT ALL ON `$db_name`.* TO '$user'@'localhost';
             FLUSH PRIVILEGES;";
+
 $create_users_table = "CREATE TABLE `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -32,6 +33,7 @@ $create_users_table = "CREATE TABLE `users` (
   `date_create` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+
 $create_courses_table = "CREATE TABLE `courses` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
@@ -45,6 +47,7 @@ $create_courses_table = "CREATE TABLE `courses` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `product_identifier` (`product_identifier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
+
 $create_feedback_table = "CREATE TABLE `feedback` (
   `id` INT(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(255) NOT NULL,
@@ -55,6 +58,21 @@ $create_feedback_table = "CREATE TABLE `feedback` (
   `date` DATETIME DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;";
+
+$create_payments_table = "CREATE TABLE `payments` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) unsigned NOT NULL,
+  `course_id` int(11) unsigned NOT NULL,
+  `sum` float NOT NULL,
+  `status` varchar(30) NOT NULL DEFAULT '',
+  `date_create` datetime NOT NULL,
+  `date_update` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `user_id` (`user_id`),
+  INDEX `course_id` (`course_id`),
+  CONSTRAINT `fk-courses-user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk-courses-course_id` FOREIGN KEY (`course_id`) REFERENCES `courses` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 
 //Создание базы данных
 try {
@@ -73,11 +91,12 @@ $migrations = [
     ['sql' => $create_users_table, 'message' => 'Create table users'],
     ['sql' => $create_courses_table, 'message' => 'Create table courses'],
     ['sql' => $create_feedback_table, 'message' => 'Create table feedback'],
+    ['sql' => $create_payments_table, 'message' => 'Create table payments'],
 ];
 try {
     foreach ($migrations as $migration) {
-        if($db->exec($migration['sql'])) {
-            echo $migration['sql'] . PHP_EOL;
+        if(!!$db->exec($migration['sql'])) {
+            echo $migration['message'] . PHP_EOL;
         } else {
             echo 'error: ' . $db->errorInfo()[2] . PHP_EOL;
         }
