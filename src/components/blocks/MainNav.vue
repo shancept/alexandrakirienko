@@ -56,7 +56,7 @@
                 opacity: 0;
                 width: 100%;
                 height: 2px;
-                border-bottom: 0px solid #fbcfc4;
+                border-bottom: 0 solid #fbcfc4;
                 box-shadow: inset 0px -1px 0px 0px #fbcfc4;
                 transition: all 0.3s ease;
             }
