@@ -3,9 +3,10 @@
         <h2 class="text-block__title">{{title}}</h2>
         <p
                 class="text-block__text"
-                v-for="paragraph in text"
+                v-for="(paragraph, num) in text"
                 v-html="paragraph"
-        ></p>
+                :key="num"
+        />
     </div>
 </template>
 
