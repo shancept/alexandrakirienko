@@ -21,18 +21,22 @@ class Feedback
      */
     public static function actionIndex($request, $response)
     {
-        //todo $request->isXmlHttpRequest() $request->isMethod('post')
-        $post = $request->request;
-        $answer = MFeedback::addFeedback(
-            $post->get('name'),
-            $post->get('phone'),
-            $post->get('message'),
-            $post->get('email'),
-            $post->get('city')) ?
-            ['result' => 'success'] :
-            ['result' => 'error'];
-        //todo  отправка на почту
-        $response->setContent(json_encode($answer));
-        $response->send();
+        if (!$request->isXmlHttpRequest()) {
+            return;
+        }
+        if ($request->isMethod('post')) {
+            $post = $request->request;
+            $answer = MFeedback::addFeedback(
+                $post->get('name'),
+                $post->get('phone'),
+                $post->get('message'),
+                $post->get('email'),
+                $post->get('city')) ?
+                ['result' => 'success'] :
+                ['result' => 'error'];
+            //todo  отправка на почту
+            $response->setContent(json_encode($answer));
+            $response->send();
+        }
     }
 }
