@@ -4,19 +4,36 @@
             <AlexandraKirienko/>
         </div>
         <div class="page-content__portfolio">
+            <hr>
             <Portfolio/>
+            слайдер
+            <hr>
         </div>
         <div class="page-content__publications">
+            <hr>
             <Publications/>
+            <hr>
         </div>
+
+        <hr>
+        слайдер
+        <hr>
+
         <div class="page-content__beauty-academy">
+            <hr>
             <BeautyAcademy/>
+            <hr>
         </div>
         <div class="page-content__wedding">
+            <hr>
             <Wedding/>
+            <hr>
         </div>
         <div class="page-content__integration">
+            <hr>
             <Integration/>
+            слайдер
+            <hr>
         </div>
     </main>
 </template>

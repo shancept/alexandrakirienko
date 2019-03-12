@@ -3,7 +3,7 @@
         <h2 class="text-block__title">{{title}}</h2>
         <p
                 class="text-block__text"
-                v-for="(paragraph, num) in text"
+                v-for="(paragraph, num) in paragraphs"
                 v-html="paragraph"
                 :key="num"
         />
@@ -17,7 +17,11 @@
             'title': String,
             'text': Array
         },
-        computed: {}
+        computed: {
+            paragraphs() {
+                return this.text ? this.text : [];
+            }
+        }
     }
 </script>
 
