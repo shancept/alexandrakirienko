@@ -39,7 +39,7 @@ class Router
         if ($first_param == 'api') {
             $next_param = array_shift($path_info_array);
             if ($next_param === 'feedback') {
-                Feedback::actionIndex($this->request, $this->response);
+                Feedback::actionIndex($this->request, $this->response, $config);
             } elseif ($next_param === 'courses') {
                 Courses::actionIndex($this->request, $this->response);
             } elseif ($next_param === 'payments') {

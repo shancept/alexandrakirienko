@@ -1,22 +1,29 @@
 <template>
     <div id="app" class="app">
         <PageHeader class="app__header"/>
-        <PageContent class="app__main"/>
+        <router-view class="app__main"/>
         <PageFooter class="app__footer"/>
+        <sweet-modal ref="modal">This is an alert.</sweet-modal>
     </div>
 </template>
 
 <script>
-    import PageHeader from './components/pages/PageHeader';
-    import PageContent from './components/pages/PageContent';
-    import PageFooter from './components/pages/PageFooter';
+    import PageHeader from './components/header/Index';
+    import PageFooter from './components/footer/Index';
+    import { SweetModal } from 'sweet-modal-vue'
 
     export default {
         name: "App",
         components: {
             PageHeader,
-            PageContent,
-            PageFooter
+            PageFooter,
+            SweetModal
+        },
+        mounted() {
+            if(this.$cookie.get('modal-promo') === null) {
+                this.$cookie.set('modal-promo', true);
+                setTimeout(() => {this.$refs.modal.open()}, 10000);
+            }
         },
         data() {
             return {

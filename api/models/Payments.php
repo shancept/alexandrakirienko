@@ -49,4 +49,19 @@ class Payments extends Models
             return false;
         }
     }
+
+    public static function changeStatusById($id, $status)
+    {
+        $sql = "UPDATE `payments` SET `status` = :status, `date_update` = :date_update WHERE `id` = :id;";
+        $model = self::model()->db->prepare($sql);
+        $model->bindParam(':id', $id);
+        $model->bindParam(':status', $status);
+        $model->bindParam(':date_update', $date_update);
+        $date_update = (new \DateTime())->format('Y.m.d H:i:s');
+        try {
+            return !!$model->execute();
+        } catch (\PDOException $exception) {
+            return false;
+        }
+    }
 }

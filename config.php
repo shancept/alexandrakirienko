@@ -13,5 +13,11 @@ return [
         'user' => 'root',
         'pass' => 'root',
     ],
+    'mail' => [
+        'host' => '',
+        'user_name' => '',
+        'password' => '',
+        'SMTP_secure' => 'tls',
+    ],
     'base_path' => __DIR__
 ];

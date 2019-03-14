@@ -29,7 +29,18 @@ class Feedback extends Models
 
         $date = (new \DateTime())->format('Y.m.d H:i:s');
         try {
-            return !!$model->execute();
+            if(!!$model->execute() === false) {
+                return false;
+            } else {
+                return [
+                    'name' => $name,
+                    'phone' => $phone,
+                    'email' => $email,
+                    'city' => $city,
+                    'message' => $message,
+                    'date' => $date,
+                ];
+            }
         } catch (\PDOException $exception) {
             return false;
         }

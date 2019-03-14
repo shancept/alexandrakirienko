@@ -1,14 +1,12 @@
 <template>
     <div class="text-block">
-        <h2
-                v-if="title"
-                class="text-block__title"
-        >{{title}}</h2>
+        <h2 class="text-block__title">{{title}}</h2>
         <p
                 class="text-block__text"
-                v-for="paragraph in paragraphs"
+                v-for="(paragraph, num) in paragraphs"
                 v-html="paragraph"
-        ></p>
+                :key="num"
+        />
     </div>
 </template>
 

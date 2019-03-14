@@ -9,30 +9,40 @@
 namespace controllers;
 
 
+use classes\Mail;
 use classes\Request;
 use classes\Response;
 use \models\Feedback as MFeedback;
+use PHPMailer\PHPMailer\PHPMailer;
 
 class Feedback
 {
     /**
      * @param $request Request
      * @param $response Response
+     * @param array $config
      */
-    public static function actionIndex($request, $response)
+    public static function actionIndex($request, $response, $config)
     {
-        //todo $request->isXmlHttpRequest() $request->isMethod('post')
-        $post = $request->request;
-        $answer = MFeedback::addFeedback(
-            $post->get('name'),
-            $post->get('phone'),
-            $post->get('message'),
-            $post->get('email'),
-            $post->get('city')) ?
-            ['result' => 'success'] :
-            ['result' => 'error'];
-        //todo  отправка на почту
-        $response->setContent(json_encode($answer));
-        $response->send();
+        if (!$request->isXmlHttpRequest()) {
+            return;
+        }
+        if ($request->isMethod('post')) {
+            $post = $request->request;
+            $m_feedback = MFeedback::addFeedback(
+                $post->get('name'),
+                $post->get('phone'),
+                $post->get('message'),
+                $post->get('email'),
+                $post->get('city'));
+            $answer = $m_feedback !== false ?
+                ['result' => 'success'] :
+                ['result' => 'error'];
+
+            (new Mail($config, new PHPMailer(true)))
+                ->send($config['user_name'], 'Сообщение с сайта', Mail::getTextFeedBack($m_feedback));
+            $response->setContent(json_encode($answer));
+            $response->send();
+        }
     }
 }
