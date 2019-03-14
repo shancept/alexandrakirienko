@@ -7,6 +7,7 @@ import cookie from 'vue-cookie';
 Vue.config.productionTip = false
 Vue.use(cookie);
 
+//todo cделать роутинг по страницам
 new Vue({
   router,
   store,

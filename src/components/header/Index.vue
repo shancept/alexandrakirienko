@@ -38,7 +38,6 @@
     import MainNav from './../blocks/MainNav';
 
     export default {
-        name: "PageHeader",
         components: {
             Btn,
             SocialLink,
