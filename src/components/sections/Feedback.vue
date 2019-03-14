@@ -5,10 +5,23 @@
             pr@aleksandrakirienko.com
         </p>
         <span v-if="formSuccess">Форма успешно отправлена</span>
-        <input type="text" name="name" placeholder="Имя" v-model="name"> <br>
-        <input type="text" name="phone" placeholder="Телефон для связи" v-model="phone"> <br>
-        <textarea name="message" cols="30" rows="10" v-model="message">Ваше предложение</textarea> <br>
-        <button @click="send">Отправить</button>
+        <div v-else>
+            <input
+                    type="text"
+                    name="name"
+                    placeholder="Имя"
+                    @input="errors.splice('name', 1)"
+                    v-model="name"> <br>
+            <input
+                    type="text"
+                    name="phone"
+                    placeholder="Телефон для связи"
+                    @input="errors.splice('phone', 1)"
+                    v-model="phone"> <br>
+            <textarea name="message" cols="30" rows="10" v-model="message">Ваше предложение</textarea> <br>
+            <span v-if="errors.length === 2">Заполните пустые поля</span>
+            <button @click="send">Отправить</button>
+        </div>
     </div>
 </template>
 
@@ -46,7 +59,12 @@
                 }
             },
             checkForm() {
-                //todo проверка элементов формы на пустоту
+                if(this.name.trim().length === 0) {
+                    this.errors.push({name: 'Имя не должно быть пустым'});
+                }
+                if(this.phone.trim().length === 0) {
+                    this.errors.push({phone: 'Телефон не должно быть пустым'});
+                }
             }
         }
     }
