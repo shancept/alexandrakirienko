@@ -21,11 +21,11 @@ var settings = {
         },
         sm: {
             'width': '780px',
-            'fields': '15px'
+            'fields': '40px'
         },
         xs: {
             'width': '560px',
-            'fields': '15px'
+            'fields': '40px'
         }
         /*
         We can create any quantity of break points.

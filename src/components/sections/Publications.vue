@@ -3,7 +3,7 @@
         <div class="publications__container">
             <div class="publications__row">
                 <div class="publications__item  publications__text-block">
-                    <TextBlock
+                    <text-block
                             title="Публикации & обложки"
                             :text="text_1"
                     />
@@ -64,12 +64,11 @@
         }
 
         &__text-block {
-            .size(9);
+            .size(12);
         }
         &__item {
             .col();
             margin-bottom: 10px;
-            .block();
 
             img {
                 /*object-fit: cover;*/
@@ -79,54 +78,54 @@
         }
         &__media-1{
             .size(3.8);
-            .size-md(4.5);
-            .size-sm(4.5);
-            .size-xs(4);
+            .size-md(6);
+            .size-sm(6);
+            .size-xs(12);
             .md-block({ order: 1; });
             .sm-block({ order: 1; });
             .xs-block({ order: 1; });
         }
         &__media-2{
             .size(3.8);
-            .size-md(5);
-            .size-sm(4.5);
-            .size-xs(4);
+           .size-md(6);
+           .size-sm(6);
+           .size-xs(12);
             .md-block({ order: 4; });
             .sm-block({ order: 2; });
             .xs-block({ order: 3; });
         }
         &__media-3{
             .size(3.8);
-            .size-md(4.5);
-            .size-sm(9);
-            .size-xs(4);
+            .size-md(6);
+            .size-sm(12);
+            .size-xs(12);
             .md-block({ order: 2; });
             .sm-block({ order: 5; });
             .xs-block({ display: none; });
         }
         &__media-4{
             .size(3.8);
-            .size-md(9);
-            .size-sm(4.5);
-            .size-xs(4);
+            .size-md(12);
+            .size-sm(6);
+            .size-xs(12);
             .md-block({ order: 3; });
             .sm-block({ order: 4; });
             .xs-block({ order: 5; });
         }
         &__media-5{
             .size(3.8);
-            .size-md(4.5);
-            .size-sm(4.5);
-            .size-xs(4);
+            .size-md(6);
+            .size-sm(6);
+            .size-xs(12);
             .md-block({ display: none; });
             .sm-block({ display: flex; order: 3; });
             .xs-block({ order: 2; });
         }
         &__media-6{
             .size(3.8);
-            .size-md(4.5);
-            .size-sm(9);
-            .size-xs(4);
+            .size-md(6);
+            .size-sm(12);
+            //.size-xs(4);
             .md-block({ order: 5; display: flex; flex-direction: column;});
             .sm-block({ order: 6; });
             .xs-block({ order: 5; });

@@ -4,6 +4,24 @@
         <router-view class="app__main"/>
         <PageFooter class="app__footer"/>
         <sweet-modal ref="modal">This is an alert.</sweet-modal>
+        <!--<div class="debug">-->
+            <!--<div>-->
+                <!--<div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </template>
 
@@ -39,6 +57,10 @@
     @import "./assets/fonts/font.css";
     @import "./assets/global/normalize.css";
     @import "./assets/global/scaffolding.less";
+
+    .debug {
+        .debug(rgba(255, 62, 47, 0.3), 1px solid black);
+    }
 
     .app {
         display: flex;

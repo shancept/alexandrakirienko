@@ -3,6 +3,7 @@
         <div class="page-header__container">
             <div class="page-header__row">
                 <div class="page-header__item  page-header__item--social">
+                    <!--todo переделать на цикл-->
                     <SocialLink
                             href="https://www.facebook.com/alexandra.kirienko.3"
                             link="facebook"
@@ -22,7 +23,7 @@
                     </a>
                 </div>
                 <div class="page-header__item  page-header__item--write">
-                    <btn href="#"/>
+                    <btn href="#" title="Написать"/>
                 </div>
                 <div class="page-header__item  page-header__item--nav">
                     <MainNav/>
@@ -48,8 +49,8 @@
 
 <style lang="less">
     .page-header {
-        padding: 20px 0;
-        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.20);
+        padding-top: 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .2);
 
         &__container {
             .wrapper();
@@ -57,16 +58,19 @@
         &__row {
             .row-flex();
             justify-content: space-between;
-            .md-block({ flex-direction: column; justify-content: center; });
             align-items: center;
+            .md-block({ flex-direction: column; justify-content: center; });
         }
         &__item {
             .col();
             .size(2);
+            .size-md(12);
 
             &--social {
+                .shift(1);
+                .shift-md(0);
                 display: flex;
-                min-width: 140px;
+                flex-wrap: wrap;
                 padding: 20px 0;
                 .md-block({ order: 1; justify-content: center;});
 
@@ -78,15 +82,13 @@
                 .size(3);
                 min-width: 250px;
                 padding-bottom: 20px;
-
             }
             &--write {
-                width: 140px;
-                .md-block({ order: 2; });
+                .shift(1);
+                .md-block({ order: 2; width: 140px; padding-bottom: 40px;});
             }
             &--nav {
                 .size(12);
-                .size-md(4);
             }
         }
     }

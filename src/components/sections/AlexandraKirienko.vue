@@ -58,6 +58,7 @@
         &__content {
             .wrapper();
         }
+
         &__row {
             .row-flex();
 
@@ -82,23 +83,32 @@
 
         &__text-block {
             .size(3.5);
-            .size-md(9);
+            .size-lg(4.5);
+            .size-md(12);
+            //.size-md(10);
+            //.size-xs(12);
         }
 
         &__img-block {
-            .size(9);
+            .size(8);
+            .size-lg(7);
+            .size-md(12);
+            //.size-md(10);
+            //.size-xs(12);
         }
 
         &__media-1 {
             .size(12);
         }
         &__media-2 {
-            .size(4.5);
+            .size(5);
+            .size-lg(4.5);
             .size-xs(12);
             .xs-block({ order: 1; });
         }
         &__media-3 {
-            .size(4.5);
+            .size(5);
+            .size-lg(5.5);
             .size-xs(8);
         }
         &__media-4 {

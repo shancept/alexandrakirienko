@@ -32,9 +32,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px 0;
-            .md-block({ flex-direction: column; padding: 30px 0;});
-                    }
+            padding-top: 10px;
+            .md-block({ flex-direction: column; padding-top: 10px; });
+        }
         &__item {
             margin: 10px 15px;
             cursor: pointer;

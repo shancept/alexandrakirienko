@@ -1,10 +1,13 @@
 <template>
-    <a class="btn">Написать</a>
+    <a class="btn">{{title}}</a>
 </template>
 
 <script>
     export default {
-        name: "Btn"
+        name: "Btn",
+        props: {
+            'title': String,
+        },
     }
 </script>
 
@@ -27,6 +30,10 @@
             background-color: #FBCFC4;
             border: 1px solid #FBCFC4;
             transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out, border-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+
+        &:focus {
+            color: #000;
         }
     }
 </style>
