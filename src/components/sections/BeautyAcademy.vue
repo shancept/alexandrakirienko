@@ -103,6 +103,8 @@
 
 <style lang="less">
     .beauty-academy {
+        background-color: #fff;
+        
         &__container {
             .wrapper();
         }
