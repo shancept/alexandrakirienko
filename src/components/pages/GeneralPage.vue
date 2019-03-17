@@ -7,7 +7,7 @@
         <hr>
         <publications class="page-content__publications"/>
         <hr>
-        слайдер
+        <articles class="page-content__articles"/>
         <hr>
         <beauty-academy class="page-content__beauty-academy"/>
         <hr>
@@ -25,6 +25,7 @@
     import AlexandraKirienko from './../sections/AlexandraKirienko';
     import Portfolio from './../sections/Portfolio';
     import Publications from './../sections/Publications';
+    import Articles from './../sections/Articles';
     import BeautyAcademy from './../sections/BeautyAcademy';
     import Wedding from './../sections/Wedding';
     import Integration from './../sections/Integration';
@@ -36,6 +37,7 @@
             AlexandraKirienko,
             Portfolio,
             Publications,
+            Articles,
             BeautyAcademy,
             Wedding,
             Integration,
