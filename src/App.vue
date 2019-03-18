@@ -22,13 +22,14 @@
                 <!--</div>-->
             <!--</div>-->
         <!--</div>-->
+
     </div>
 </template>
 
 <script>
     import PageHeader from './components/header/Index';
     import PageFooter from './components/footer/Index';
-    import { SweetModal } from 'sweet-modal-vue'
+    import { SweetModal } from 'sweet-modal-vue';
 
     export default {
         name: "App",

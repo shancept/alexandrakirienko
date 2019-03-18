@@ -6,18 +6,13 @@
         слайдер
         <hr>
         <publications class="page-content__publications"/>
-        <hr>
         <articles class="page-content__articles"/>
-        <hr>
         <beauty-academy class="page-content__beauty-academy"/>
         <hr>
         <Wedding class="page-content__wedding"/>
         <hr>
         <integration class="page-content__integration"/>
-        слайдер
-        <hr>
         <feedback class="page-content__feedback"/>
-        <hr>
     </main>
 </template>
 

@@ -4,8 +4,8 @@
             <div class="publications__row">
                 <div class="publications__item  publications__text-block">
                     <text-block
-                            title="Публикации & обложки"
-                            :text="text_1"
+                        title="Публикации & обложки"
+                        :text="text_1"
                     />
                 </div>
             </div>
@@ -60,7 +60,7 @@
         &__row {
             .row-flex();
             justify-content: space-between;
-            .md-block({justify-content: center;});
+            .md-block({ justify-content: center; });
         }
 
         &__text-block {
@@ -71,12 +71,12 @@
             margin-bottom: 10px;
 
             img {
-                /*object-fit: cover;*/
+                object-fit: cover;
                 width: 100%;
                 height: 100%;
             }
         }
-        &__media-1{
+        &__media-1 {
             .size(3.8);
             .size-md(6);
             .size-sm(6);
@@ -85,16 +85,16 @@
             .sm-block({ order: 1; });
             .xs-block({ order: 1; });
         }
-        &__media-2{
-            .size(3.8);
-           .size-md(6);
-           .size-sm(6);
-           .size-xs(12);
+        &__media-2 {
+            .size(3.5);
+            .size-md(6);
+            .size-sm(6);
+            .size-xs(12);
             .md-block({ order: 4; });
             .sm-block({ order: 2; });
             .xs-block({ order: 3; });
         }
-        &__media-3{
+        &__media-3 {
             .size(3.8);
             .size-md(6);
             .size-sm(12);
@@ -103,7 +103,7 @@
             .sm-block({ order: 5; });
             .xs-block({ display: none; });
         }
-        &__media-4{
+        &__media-4 {
             .size(3.8);
             .size-md(12);
             .size-sm(6);
@@ -112,7 +112,7 @@
             .sm-block({ order: 4; });
             .xs-block({ order: 5; });
         }
-        &__media-5{
+        &__media-5 {
             .size(3.8);
             .size-md(6);
             .size-sm(6);
@@ -121,12 +121,12 @@
             .sm-block({ display: flex; order: 3; });
             .xs-block({ order: 2; });
         }
-        &__media-6{
+        &__media-6 {
             .size(3.8);
             .size-md(6);
             .size-sm(12);
             //.size-xs(4);
-            .md-block({ order: 5; display: flex; flex-direction: column;});
+            .md-block({ order: 5; display: flex; flex-direction: column; });
             .sm-block({ order: 6; });
             .xs-block({ order: 5; });
         }

@@ -1,62 +1,48 @@
 <template>
-    <slider class="articles" v-bind="options">
-        <div class="articles__slide">
-            <div class="articles__container">
-                <div class="articles__row">
-                    <div class="articles__item  articles__img-block">Картинка_1</div>
-                    <div class="articles__item  articles__text-block">Текст_1</div>
+    <section class="articles">
+        <swiper :options="swiperOption" style="height: auto">
+            <swiper-slide>
+                <div class="articles__slide">
+                    <div class="articles__row">
+                        <div class="articles__item  articles__img-block">Картинка_1</div>
+                        <div class="articles__item  articles__text-block">Текст_1</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="articles__slide">
-            <div class="articles__container">
-                <div class="articles__row">
-                    <div class="articles__item  articles__img-block">Картинка_2</div>
-                    <div class="articles__item  articles__text-block">Текст_2</div>
+            </swiper-slide>
+            <swiper-slide>
+                <div class="articles__slide">
+                    <div class="articles__row">
+                        <div class="articles__item  articles__img-block">Картинка_1</div>
+                        <div class="articles__item  articles__text-block">Текст_1</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <div class="articles__slide">
-            <div class="articles__container">
-                <div class="articles__row">
-                    <div class="articles__item  articles__img-block">Картинка_3</div>
-                    <div class="articles__item  articles__text-block">Текст_3</div>
-                </div>
-            </div>
-        </div>
-        <div class="articles__slide">
-            <div class="articles__container">
-                <div class="articles__row">
-                    <div class="articles__item  articles__img-block">Картинка_4</div>
-                    <div class="articles__item  articles__text-block">Текст_4</div>
-                </div>
-            </div>
-        </div>
-    </slider>
+            </swiper-slide>
+            <div class="swiper-button-prev" slot="button-prev"></div>
+            <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
+    </section>
 </template>
 
 <script>
-    import Slider from './../blocks/Slider';
+    import 'swiper/dist/css/swiper.css';
+    import {swiper, swiperSlide} from 'vue-awesome-swiper';
 
     export default {
         name: "Articles",
         components: {
-            Slider
+            swiper,
+            swiperSlide
         },
         data() {
             return {
-                options: {
-                    items: 1,
-                    margin: 0,
-                    nav: true,
-                    dots: false,
+                swiperOption: {
+                    autoHeight: true,
+                    spaceBetween: 20,
                     loop: true,
-                    timing: 'ease',
-                    offset: 1,
-                    prevNav: '',
-                    nextNav: '',
-                    sibling: false,
-                    responsive: {}
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev'
+                    }
                 }
             }
         }
@@ -66,10 +52,6 @@
 <style lang="less">
     .articles {
         &__slide {
-
-        }
-
-        &__container {
             .wrapper();
         }
 
