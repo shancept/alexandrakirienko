@@ -51,7 +51,7 @@
                 //todo Добавить ссылки
                 features: {
                     feature_1: {
-                        img: require('./../../assets/img/Features/image_1.jpg'),
+                        img: require('../../assets/img/features/image_1.jpg'),
                         title: 'МК «Архитектура бровей»',
                         price: '12000р',
                         text: [
@@ -68,7 +68,7 @@
                         }
                     },
                     feature_2: {
-                        img: require('./../../assets/img/Features/image_2.jpg'),
+                        img: require('../../assets/img/features/image_2.jpg'),
                         title: 'Базовый курс «ВИЗАЖИСТ»',
                         price: '35000р',
                         text: [
@@ -82,7 +82,7 @@
                         }
                     },
                     feature_3: {
-                        img: require('./../../assets/img/Features/image_3.jpg'),
+                        img: require('../../assets/img/features/image_3.jpg'),
                         title: '«Makeup — уроки для себя»',
                         price: '5000р',
                         text: [

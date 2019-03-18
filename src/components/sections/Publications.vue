@@ -11,23 +11,23 @@
             </div>
             <div class="publications__row">
                 <div class="publications__item  publications__media-1">
-                    <img src="./../../assets/img/Publications/image_1.png" alt="image">
+                    <img src="../../assets/img/publications/image_1.png" alt="image">
                 </div>
                 <div class="publications__item  publications__media-2">
-                    <img src="./../../assets/img/Publications/image_2.png" alt="image">
+                    <img src="../../assets/img/publications/image_2.png" alt="image">
                 </div>
                 <div class="publications__item  publications__media-3">
-                    <img src="./../../assets/img/Publications/image_3.png" alt="image">
+                    <img src="../../assets/img/publications/image_3.png" alt="image">
                 </div>
                 <div class="publications__item  publications__media-4">
-                    <img src="./../../assets/img/Publications/image_4.png" alt="image">
+                    <img src="../../assets/img/publications/image_4.png" alt="image">
                 </div>
                 <div class="publications__item  publications__media-5">
-                    <img src="./../../assets/img/Publications/image_5.png" alt="image">
+                    <img src="../../assets/img/publications/image_5.png" alt="image">
                 </div>
                 <div class="publications__item  publications__media-6">
-                    <img src="./../../assets/img/Publications/image_6.png" alt="image">
-                    <img class="publications__ghost-img" src="./../../assets/img/Publications/image_5.png" alt="image">
+                    <img src="../../assets/img/publications/image_6.png" alt="image">
+                    <img class="publications__ghost-img" src="../../assets/img/publications/image_5.png" alt="image">
                 </div>
             </div>
         </div>

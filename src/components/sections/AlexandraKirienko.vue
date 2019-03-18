@@ -5,16 +5,16 @@
                 <div class="alexandra-kirienko__item  alexandra-kirienko__img-block">
                     <div class="alexandra-kirienko__row">
                         <div class="alexandra-kirienko__item  alexandra-kirienko__media-1">
-                            <img src="./../../assets/img/AlexandraKirienko/image_1.jpg" alt="image">
+                            <img src="../../assets/img/alexandraKirienko/image_1.jpg" alt="image">
                         </div>
                         <div class="alexandra-kirienko__item  alexandra-kirienko__media-2">
                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/jlbKhwV5vEw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="alexandra-kirienko__item  alexandra-kirienko__media-3">
-                            <img src="./../../assets/img/AlexandraKirienko/image_2.jpg" alt="image">
+                            <img src="../../assets/img/alexandraKirienko/image_2.jpg" alt="image">
                         </div>
                         <div class="alexandra-kirienko__item  alexandra-kirienko__media-4">
-                            <img src="./../../assets/img/AlexandraKirienko/image_3.png" alt="image">
+                            <img src="../../assets/img/alexandraKirienko/image_3.png" alt="image">
                         </div>
                     </div>
                 </div>
