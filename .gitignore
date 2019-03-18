@@ -21,3 +21,5 @@ yarn-error.log*
 *.sw*
 
 /vendor/
+/package-lock.json
+/config.php
