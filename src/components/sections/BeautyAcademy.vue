@@ -118,6 +118,7 @@
 
         &__text-block {
             margin-bottom: 90px;
+            .md-block({margin-bottom: 20px;});
         }
 
         &__title {
