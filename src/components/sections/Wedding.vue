@@ -1,5 +1,6 @@
 <template>
     <section class="wedding">
+        <!--todo доделать адаптивку и плиточный блок-->
         <div class="wedding__container">
             <div class="wedding__row">
                 <div class="wedding__item  wedding__text-block">
