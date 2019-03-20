@@ -8,9 +8,7 @@
         <publications class="page-content__publications"/>
         <articles class="page-content__articles"/>
         <beauty-academy class="page-content__beauty-academy"/>
-        <hr>
         <Wedding class="page-content__wedding"/>
-        <hr>
         <integration class="page-content__integration"/>
         <feedback class="page-content__feedback"/>
     </main>

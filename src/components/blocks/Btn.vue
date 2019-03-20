@@ -1,5 +1,8 @@
 <template>
-    <a class="btn">{{title}}</a>
+    <a
+        class="btn"
+       :class="isModifier"
+    >{{title}}</a>
 </template>
 
 <script>
@@ -7,14 +10,20 @@
         name: "Btn",
         props: {
             'title': String,
+            'modifier': String
         },
+        computed: {
+            isModifier() {
+                return this.modifier ? ('btn--' + this.modifier) : ''
+            }
+        }
     }
 </script>
 
 <style lang="less">
     .btn {
         display: block;
-        padding: 10px 20px;
+        padding: 10px;
         font-size: 14px;
         font-weight: bold;
         text-align: center;
@@ -34,6 +43,15 @@
 
         &:focus {
             color: #000;
+        }
+
+        &--second {
+            background-color: #FBCFC4;
+            border: 1px solid #FBCFC4;
+
+            &:hover {
+                border: 1px solid #000;
+            }
         }
     }
 </style>
