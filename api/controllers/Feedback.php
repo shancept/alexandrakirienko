@@ -39,7 +39,7 @@ class Feedback
                 ['result' => 'success'] :
                 ['result' => 'error'];
 
-            (new Mail($config['mail'], new PHPMailer(true)))
+            (new Mail($config['mail'], new PHPMailer()))
                 ->send($config['mail']['user_name'], 'Сообщение с сайта', Mail::getTextFeedBack($m_feedback));
             $response->setContent(json_encode($answer));
             $response->send();
