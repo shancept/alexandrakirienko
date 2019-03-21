@@ -9,6 +9,7 @@
                     />
                 </div>
             </div>
+            <!--todo переелать в цикл-->
             <div class="publications__row">
                 <div class="publications__item  publications__media-1">
                     <img src="../../assets/img/publications/image_1.png" alt="image">
