@@ -4,25 +4,6 @@
         <router-view class="app__main"/>
         <PageFooter class="app__footer"/>
         <sweet-modal ref="modal">This is an alert.</sweet-modal>
-        <!--<div class="debug">-->
-            <!--<div>-->
-                <!--<div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                    <!--<div></div>-->
-                <!--</div>-->
-            <!--</div>-->
-        <!--</div>-->
-
     </div>
 </template>
 

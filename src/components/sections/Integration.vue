@@ -84,8 +84,9 @@
 </template>
 
 <script>
-    import TextBlock from './../blocks/TextBlock';
+    import 'swiper/dist/css/swiper.css';
     import {swiper, swiperSlide} from 'vue-awesome-swiper';
+    import TextBlock from './../blocks/TextBlock';
 
     export default {
         name: "Integration",

@@ -11,15 +11,15 @@
                 </div>
             </div>
             <div class="portfolio__masonry">
-                <masonry
+            <masonry
                     :cols="{default: 4, 1100: 3}"
                     :gutter="10"
-                >
-                    <div v-for="(image, key) in images" :key="key" class="integration__img">
-                        <img :src="image" alt="Изображение">
-                    </div>
-                </masonry>
-            </div>
+            >
+                <div v-for="(image, key) in images" :key="key" class="integration__img">
+                    <img :src="image" alt="Изображение">
+                </div>
+            </masonry>
+        </div>
             <div class="portfolio__slider">
                 <swiper :options="swiperOption" style="height: auto">
                     <swiper-slide v-for="(slide, num) in images" :key="num">

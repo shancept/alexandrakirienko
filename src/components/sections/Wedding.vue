@@ -109,6 +109,7 @@
         &__img {
             .col();
             margin-bottom: 10px;
+            overflow: hidden;
 
             img {
                 width: 100%;
@@ -120,6 +121,7 @@
             .size(8);
             .size-lg(6);
             .size-sm(12);
+            max-height: 600px;
         }
         &__img-right {
             .size(4);
@@ -128,6 +130,7 @@
             //.row-flex();
             display: flex;
             flex-wrap: wrap;
+            max-height: 600px;
         }
         &__img-right-1 {
             .col();
