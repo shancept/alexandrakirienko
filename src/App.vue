@@ -77,7 +77,6 @@
 
         &__footer {
             flex-shrink: 0;
-            .block();
         }
     }
 </style>
