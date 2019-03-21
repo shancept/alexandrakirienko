@@ -30,6 +30,7 @@
     "sass-loader": "^7.1.0",
     "smart-grid": "^2.1.2",
     "style-resources-loader": "^1.2.1",
+    "vue-masonry-css": "^1.0.3",
     "vue-template-compiler": "^2.5.21"
   }
 }
