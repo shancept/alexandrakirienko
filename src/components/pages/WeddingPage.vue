@@ -1,5 +1,5 @@
 <template>
-    <div class="wedding-page">
+    <main class="wedding-page">
         <div class="wedding-page__container">
             <div class="wedding-page__text-block">
                 <div class="wedding-page__row">
@@ -51,7 +51,7 @@
                 </swiper>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <script>
