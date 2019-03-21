@@ -21,7 +21,6 @@ class Mail
         $this->config = $config;
         $this->php_mailer = $php_mailer;
 
-        $this->php_mailer->SMTPDebug = 2;
         $this->php_mailer->isSMTP();
         $this->php_mailer->Host = $this->config['host'];
         $this->php_mailer->SMTPAuth = true;
