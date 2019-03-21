@@ -23,7 +23,20 @@
                     />
                 </div>
                 <div class="wedding__item  wedding__img-block">
-
+                    <div class="wedding__img  wedding__img-left">
+                        <img src="./../../assets/img/wedding/image_1.png" alt="Изображение">
+                    </div>
+                    <div class="wedding__img  wedding__img-right">
+                        <div class="wedding__img-right-1">
+                            <img src="./../../assets/img/wedding/image_2.png" alt="Изображение">
+                        </div>
+                        <div class="wedding__img-right-2">
+                            <img src="./../../assets/img/wedding/image_3.png" alt="Изображение">
+                        </div>
+                        <div class="wedding__img-right-3">
+                            <img src="./../../assets/img/wedding/image_4.png" alt="Изображение">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,7 +73,7 @@
     .wedding {
         padding: 40px 0;
         background-color: #fff;
-        
+
         &__container {
             .wrapper();
         }
@@ -72,16 +85,62 @@
         }
         &__text-block {
             .size(6);
+            .size-md(10);
+            .md-block({ order: 1;});
         }
         &__note-block {
-            .size(4);
-            .shift-left(2);
             margin-top: auto;
+            .size(4);
+            .size-md(10);
+            .shift-left(2);
+            .shift-md-left(0);
+            .md-block({ order: 3;});
+            .sm-block({ display: none; });
+
         }
         &__img-block {
             .size(12);
-            .row-flex();
+            //.row-flex();
+            .md-block({ order: 2;});
+            display: flex;
+            flex-wrap: wrap;
             margin-top: 60px;
+        }
+        &__img {
+            .col();
+            margin-bottom: 10px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &__img-left {
+            .size(8);
+            .size-lg(6);
+            .size-sm(12);
+        }
+        &__img-right {
+            .size(4);
+            .size-lg(6);
+            .size-sm(12);
+            //.row-flex();
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &__img-right-1 {
+            .col();
+            .size(6);
+        }
+        &__img-right-2 {
+            .col();
+            .size(6);
+        }
+        &__img-right-3 {
+            .col();
+            .size(12);
+            margin-top: 10px;
         }
 
         &__btn {

@@ -1,10 +1,7 @@
 <template>
     <main class="page-content">
         <alexandra-kirienko class="page-content__alexandra-kirienko"/>
-        <hr>
         <portfolio class="page-content__portfolio"/>
-        слайдер
-        <hr>
         <publications class="page-content__publications"/>
         <articles class="page-content__articles"/>
         <beauty-academy class="page-content__beauty-academy"/>

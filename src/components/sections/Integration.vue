@@ -13,6 +13,7 @@
             <swiper :options="swiperOption" style="height: auto">
                 <swiper-slide>
                     <div class="integration__slide">
+                        <!--todo переделать в цикл-->
                         <div class="integration__row">
                             <div class="integration__item  integration__slide-item">
                                 <img src="./../../assets/img/integration/image_1.png" alt="Изображение">
@@ -69,12 +70,14 @@
         </div>
         <div class="integration__img-block">
             <div class="integration__container">
-                <div class="masonry">
-                    <div class="masonry__item">1</div>
-                    <div class="masonry__item">2</div>
-                    <div class="masonry__item">3</div>
-                    <div class="masonry__item">4</div>
-                </div>
+                <masonry
+                    :cols="{default: 4, 1100: 3, 960: 2, 560: 1}"
+                    :gutter="10"
+                >
+                    <div v-for="(image, key) in images" :key="key" class="integration__img">
+                        <img :src="image" alt="Изображение">
+                    </div>
+                </masonry>
             </div>
         </div>
     </section>
@@ -106,7 +109,17 @@
                         nextEl: '.integration__slide-btn--next',
                         prevEl: '.integration__slide-btn--prev'
                     }
-                }
+                },
+                images: [
+                    require('./../../assets/img/masonry/image_1.jpg'),
+                    require('./../../assets/img/masonry/image_2.jpg'),
+                    require('./../../assets/img/masonry/image_3.jpg'),
+                    require('./../../assets/img/masonry/image_4.jpg'),
+                    require('./../../assets/img/masonry/image_5.jpg'),
+                    require('./../../assets/img/masonry/image_6.jpg'),
+                    require('./../../assets/img/masonry/image_7.jpg'),
+                    require('./../../assets/img/masonry/image_8.jpg')
+                ]
             }
 
         }
@@ -114,18 +127,6 @@
 </script>
 
 <style lang="less">
-    .masonry {
-        display: grid;
-        grid-gap: 2em;
-        grid-template-columns: repeat( auto-fill, minmax( 200px, 1fr ) );
-        grid-auto-rows: 250px;
-
-        &__item {
-            .block();
-
-        }
-    }
-
     .integration {
         
         &__text-block {
@@ -218,6 +219,10 @@
         &__img-block {
             padding-top: 60px;
             padding-bottom: 40px;
+        }
+
+        &__img {
+            margin-top: 10px;
         }
     }
 </style>
