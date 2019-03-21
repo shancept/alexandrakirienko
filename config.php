@@ -19,5 +19,6 @@ return [
         'password' => '',
         'SMTP_secure' => 'tls',
     ],
-    'base_path' => __DIR__
+    'base_path' => __DIR__,
+    'mode' => 'dev'
 ];
