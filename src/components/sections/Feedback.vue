@@ -1,12 +1,10 @@
 <template>
     <section class="feedback">
         <div class="feedback__container">
-            <h3 class="feedback__title">Хотите предложить сотрудничество?</h3>
-            <p class="feedback__info">Оставьте ваше сообщение здесь или пишите на почту: <br>
-                pr@aleksandrakirienko.com
-            </p>
+            <h3 class="feedback__title" :class="titleColor">{{title}}</h3>
+            <p class="feedback__info" :class="infoColor" v-html="info"></p>
             <span class="feedback__success" v-if="formSuccess">Спасибо! Данные успешно отправлены.</span>
-            <div class="feedback__form" v-else>
+            <div class="feedback__form" :class="color === 'white' ? 'feedback__form--white': ''" v-else>
                 <input
                         class="feedback__form-item"
                         type="text"
@@ -34,6 +32,7 @@
                 <btn
                         @click-btn="send"
                         class="feedback__btn"
+                        :modifier="btn.modifier !== undefined ? btn.modifier : false"
                         title="Отправить"/>
             </div>
         </div>
@@ -48,6 +47,25 @@
         components: {
           Btn
         },
+        props: {
+            title: {
+                type: String,
+                default: 'Хотите предложить сотрудничество?'
+            },
+            info: {
+                type: String,
+                default: 'Оставьте ваше сообщение здесь или пишите на почту: <br>\n' +
+                'pr@aleksandrakirienko.com'
+            },
+            color: {
+                type: String,
+                default: 'black'
+            },
+            btn: {
+                type: Object,
+                default() { return {}}
+            }
+        },
         data() {
             return {
                 name: '',
@@ -55,6 +73,14 @@
                 message: '',
                 errors: [],
                 formSuccess: false
+            }
+        },
+        computed: {
+            titleColor() {
+                return this.color === 'white' ? 'feedback__title--white': '';
+            },
+            infoColor() {
+                return this.color === 'white' ? 'feedback__info--white': '';
             }
         },
         methods: {
@@ -112,11 +138,23 @@
             font-size: 42px;
             .md-block({ font-size: 38px; });
             .sm-block({ font-size: 30px; });
+
+            &--white {
+                color: #e6e6e6;
+                font-weight: 600;
+                font-size: 42px;
+                line-height: 1.23;
+            }
         }
         &__info {
             font-size: 20px;
             .md-block({ font-size: 18px; });
             .sm-block({ font-size: 16px; });
+
+            &--white {
+                color: #e6e6e6;
+                font-weight: 300;
+            }
         }
         &__success {
             display: block;
@@ -142,6 +180,9 @@
         &__form {
             max-width: 560px;
             margin: 0 auto;
+            &--white &-item {
+                border-bottom: 1px solid #e6e6e6;
+            }
         }
         &__form-item {
             width: 100%;

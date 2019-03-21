@@ -1,7 +1,7 @@
 <template>
     <a
             class="btn"
-            :class="isModifier"
+            :class="modifierClass"
             @click="clickBtn()"
     >{{title}}</a>
 </template>
@@ -14,7 +14,7 @@
             'modifier': String
         },
         computed: {
-            isModifier() {
+            modifierClass() {
                 return this.modifier ? ('btn--' + this.modifier) : ''
             }
         },
@@ -55,6 +55,14 @@
             background-color: #FBCFC4;
             border: 1px solid #FBCFC4;
 
+            &:hover {
+                border: 1px solid #000;
+            }
+        }
+        &--third {
+            color: #690000;
+            background-color: #eebb71;
+            border-radius: 30px;
             &:hover {
                 border: 1px solid #000;
             }
