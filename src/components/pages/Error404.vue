@@ -1,7 +1,11 @@
 <template>
     <main class="page-content">
         <section class="error-404">
-            <div class="error-404__container"></div>
+            <div class="error-404__container">
+                <div class="error-404__container--visor" ref="visor">
+                    <img id="foo" src="../../assets/img/header/logo.png" alt="logo">
+                </div>
+            </div>
         </section>
         <div class="page-content__gradient"></div>
         <feedback
@@ -18,6 +22,15 @@
     export default {
         components: {
             Feedback
+        },
+        mounted() {
+            document.addEventListener("mousemove", event => {
+                let speed = 50;
+                let x = -Math.floor((event.pageX)/speed-20) + "px";
+                let y = -Math.floor((event.pageY)/speed) + "px";
+                let elem = this.$refs.visor;
+                elem.style.transform = 'translate('+x+' , '+y+')';
+            }, false);
         }
     }
 </script>
@@ -54,6 +67,20 @@
 
         &__container {
             .wrapper();
+            padding-top: 100px;
+            &--visor {
+                background-image: url("../../assets/img/header/logo.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 900px;
+                & img {
+                    filter: brightness(1000%);
+                    width: 300px;
+                    padding: 100px 0 300px;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
         }
     }
 
