@@ -1,7 +1,8 @@
 <template>
     <a
-        class="btn"
-       :class="isModifier"
+            class="btn"
+            :class="isModifier"
+            @click="clickBtn()"
     >{{title}}</a>
 </template>
 
@@ -15,6 +16,11 @@
         computed: {
             isModifier() {
                 return this.modifier ? ('btn--' + this.modifier) : ''
+            }
+        },
+        methods: {
+            clickBtn() {
+                this.$emit('click-btn');
             }
         }
     }

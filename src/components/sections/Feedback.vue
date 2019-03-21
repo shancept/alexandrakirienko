@@ -12,6 +12,7 @@
                         type="text"
                         name="name"
                         placeholder="Ваше имя"
+                        :style="findError('name') !== false ? {'border-bottom': '1px solid red'} : ''"
                         @input="errors.splice('name', 1)"
                         v-model="name"> <br>
                 <input
@@ -19,6 +20,7 @@
                         type="text"
                         name="phone"
                         placeholder="Телефон для связи"
+                        :style="findError('phone') !== false ? {'border-bottom': '1px solid red'} : ''"
                         @input="errors.splice('phone', 1)"
                         v-model="phone"> <br>
                 <textarea
@@ -30,7 +32,7 @@
                         v-model="message">Ваше предложение</textarea> <br>
                 <span class="feedback__error" v-if="errors.length === 2">Заполните пустые поля</span>
                 <btn
-                        @click="send"
+                        @click-btn="send"
                         class="feedback__btn"
                         title="Отправить"/>
             </div>
@@ -82,6 +84,14 @@
                 if(this.phone.trim().length === 0) {
                     this.errors.push({phone: 'Телефон не должно быть пустым'});
                 }
+            },
+            findError(type) {
+                for (let key in this.errors) {
+                    if(this.errors[key][type] !== undefined) {
+                        return this.errors[key][type]
+                    }
+                }
+                return false
             }
         }
     }
