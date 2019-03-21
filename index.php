@@ -6,12 +6,13 @@
  * Time: 0:09
  */
 
-//todo убрать в продакшне
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+$config = include_once(__DIR__.'/config.php');
+
+if(isset($config['mode']) && $config['mode'] === 'dev') {
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+}
 
 require(__DIR__ . '/vendor/autoload.php');
-
-$config = include_once(__DIR__.'/config.php');
 
 (new \classes\Router())->init($config);

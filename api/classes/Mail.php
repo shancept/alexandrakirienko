@@ -21,7 +21,6 @@ class Mail
         $this->config = $config;
         $this->php_mailer = $php_mailer;
 
-        $this->php_mailer->SMTPDebug = 2;
         $this->php_mailer->isSMTP();
         $this->php_mailer->Host = $this->config['host'];
         $this->php_mailer->SMTPAuth = true;
@@ -40,10 +39,9 @@ class Mail
             $this->php_mailer->isHTML(true);
 
             $this->php_mailer->Subject = $subj;
-            $this->php_mailer->Body    = $body;
+            $this->php_mailer->Body = $body;
 
             $this->php_mailer->send();
-            echo 'Message has been sent';
         } catch (\Exception $e) {
             echo 'Message could not be sent. Mailer Error: ', $this->php_mailer->ErrorInfo;
         }
@@ -54,14 +52,15 @@ class Mail
      * @param $feedback
      * @return string
      */
-    public static function getTextFeedBack($feedback) {
-        $html = '';
-        if(isset($feedback['name'])) $html = '<p>Имя: '.$feedback['name'].'</p>';
-        if(isset($feedback['phone'])) $html .= '<p>Телефон: '.$feedback['phone'].'</p>';
-        if(isset($feedback['email'])) $html .= '<p>Email: '.$feedback['email'].'</p>';
-        if(isset($feedback['city'])) $html .= '<p>Город: '.$feedback['city'].'</p>';
-        if(isset($feedback['message'])) $html .= '<p>Текст: '.$feedback['message'].'</p>';
-        if(isset($feedback['email'])) $html .= '<p>Дата: '.$feedback->date.'</p>';
+    public static function getTextFeedBack($feedback)
+    {
+        $html = '<h1>Новое обращение с сайта</h1>';
+        if (isset($feedback['name'])) $html = '<p>Имя: ' . $feedback['name'] . '</p>';
+        if (isset($feedback['phone'])) $html .= '<p>Телефон: ' . $feedback['phone'] . '</p>';
+        if (isset($feedback['email'])) $html .= '<p>Email: ' . $feedback['email'] . '</p>';
+        if (isset($feedback['city'])) $html .= '<p>Город: ' . $feedback['city'] . '</p>';
+        if (isset($feedback['message'])) $html .= '<p>Текст: ' . $feedback['message'] . '</p>';
+        if (isset($feedback['email'])) $html .= '<p>Дата: ' . $feedback->date . '</p>';
         return $html;
     }
 }
