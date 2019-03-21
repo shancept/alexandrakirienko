@@ -9,14 +9,14 @@
 return [
     'db' => [
         'mysql' => 'mysql:host=localhost',
-        'dbname' => 'alex',
-        'user' => 'root',
-        'pass' => 'root',
+        'dbname' => 'ch64153_alex',
+        'user' => 'ch64153_alex',
+        'pass' => '5rrDjZpY',
     ],
     'mail' => [
-        'host' => '',
-        'user_name' => '',
-        'password' => '',
+        'host' => 'smtp.yandex.ru',
+        'user_name' => 'kirienko-beauty@yandex.ru',
+        'password' => 'h2j35hjJh4F3',
         'SMTP_secure' => 'tls',
     ],
     'base_path' => __DIR__,
