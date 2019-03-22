@@ -12,8 +12,8 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
         { path: '/', component: GeneralPage },
-        { path: '*', component: Error404 },
         { path: '/wedding', component: WeddingPage },
-        { path: '/biography', component: Biography }
+        { path: '/biography', component: Biography },
+        { path: '*', component: Error404 },
     ]
 })

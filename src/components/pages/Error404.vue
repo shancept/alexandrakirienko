@@ -9,7 +9,7 @@
         </section>
         <div class="page-content__gradient"></div>
         <feedback
-                class="page-content__feedback"
+                class="page-content__feedback page-content__feedback--red"
                 :title="'Контактная информация'"
                 :info="'Для обсуждения возможного сотрудничества — <br> воспользуйтесь формой или пишите на почту.'"
                 :color="'white'"
@@ -36,7 +36,7 @@
 </script>
 
 <style lang="less">
-    .page-content__feedback {
+    .page-content__feedback--red {
         padding-top: 150px;
         padding-bottom: 150px;
         background: #400000;
