@@ -84,6 +84,7 @@
             }
             &--write {
                 .shift(1);
+                max-width: 140px;
                 .md-block({ order: 2; width: 140px; padding-bottom: 40px;});
             }
             &--nav {

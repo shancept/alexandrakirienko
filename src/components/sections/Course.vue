@@ -10,8 +10,8 @@
                 </div>
                 <div class="course__item  course__item-price">
                     <div class="course__price">
-                        <h3>Стоимость курса</h3>
-                        <span>Какой-то текст</span>
+                        <h3>{{courseData.note.title}}</h3>
+                        <span>{{courseData.note.title}}</span>
                     </div>
                     <span class="course__note">*при отказе от курса предоплата не возвращается</span>
                 </div>
@@ -39,24 +39,9 @@
         components: {
             TextBlock
         },
-        data() {
-            return {
-                courseData: {
-                    text: {
-                        title: 'Курс "Визажист"',
-                        text: [
-                            'Курс проходит на косметике студии класса ЛЮКС, выдается специально разработанное учебное пособие школы. Кисти студенты приобретают самостоятельно. <br>\n' +
-                            'Модели для отработок предоставляются только иногородним студентам. <br>\n' +
-                            '<b>Экспресс группа 10 дней. Курс проходит в группе до 10 человек.</b>'
-                        ]
-                    },
-                    note: {
-                        title: 'Стоимость курса — 35000р',
-                        text: 'Предоплата для бронирования – 5000р'
-                    }
-                }
-            }
-        }
+        props: {
+            courseData: Object
+        },
     }
 </script>
 
@@ -77,9 +62,12 @@
         &__text-block {}
         &__item-text{
             .size(8);
+            .size-md(12);
         }
         &__item-price{
             .size(4);
+            .size-md(12);
+            align-self: flex-end;
         }
         &__price {
             position: relative;
