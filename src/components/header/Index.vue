@@ -18,7 +18,7 @@
                     />
                 </div>
                 <div class="page-header__item  page-header__item--logo">
-                    <a href="#">
+                    <a href="/">
                         <img src="../../assets/img/header/logo.png" alt="logo">
                     </a>
                 </div>

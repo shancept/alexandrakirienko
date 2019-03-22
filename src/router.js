@@ -4,6 +4,10 @@ import GeneralPage from './components/pages/GeneralPage';
 import Error404 from './components/pages/Error404';
 import WeddingPage from './components/pages/WeddingPage';
 import Biography from './components/pages/Biography';
+import MakeupBasic from './components/pages/courses/MakeupBasic';
+import McArhitect from './components/pages/courses/McArhitect';
+import MakeupForYourself from './components/pages/courses/MakeupForYourself';
+
 
 Vue.use(Router)
 
@@ -12,8 +16,11 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
         { path: '/', component: GeneralPage },
-        { path: '*', component: Error404 },
         { path: '/wedding', component: WeddingPage },
-        { path: '/biography', component: Biography }
+        { path: '/biography', component: Biography },
+        { path: '/courses/makeup-basic', component: MakeupBasic },
+        { path: '/courses/mc-arhitect', component: McArhitect },
+        { path: '/courses/makeup-for-yourself', component: MakeupForYourself },
+        { path: '*', component: Error404 },
     ]
 })
