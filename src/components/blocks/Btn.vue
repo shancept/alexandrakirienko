@@ -11,7 +11,7 @@
         name: "Btn",
         props: {
             'title': String,
-            'modifier': String
+            'modifier': null
         },
         computed: {
             modifierClass() {

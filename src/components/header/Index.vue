@@ -3,7 +3,6 @@
         <div class="page-header__container">
             <div class="page-header__row">
                 <div class="page-header__item  page-header__item--social">
-                    <!--todo переделать на цикл-->
                     <SocialLink
                             href="https://www.facebook.com/alexandra.kirienko.3"
                             link="facebook"

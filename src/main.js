@@ -9,7 +9,6 @@ Vue.config.productionTip = false;
 Vue.use(cookie);
 Vue.use(VueMasonry);
 
-//todo cделать роутинг по страницам
 new Vue({
   router,
   store,

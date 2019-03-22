@@ -1,5 +1,6 @@
 <template>
     <a class="social-link"
+       target="_blank"
        :class="background"
     >Социальная ссылка</a>
 </template>
