@@ -17,9 +17,9 @@
                 </div>
             </div>
             <div class="beauty-academy__row">
-                <div v-for="(feature, key) in features" :key="key" class="beauty-academy__item  beauty-academy__feature">
-                    <feature
-                        :featureData="feature"
+                <div v-for="(price, key) in prices" :key="key" class="beauty-academy__item  beauty-academy__price">
+                    <price
+                        :priceData="price"
                     />
                 </div>
             </div>
@@ -29,14 +29,14 @@
 
 <script>
     import TextBlock from './../blocks/TextBlock';
-    import Feature from './../blocks/Feature';
+    import Price from '../blocks/Price';
 
     export default {
         name: "BeautyAcademy",
         components: {
             TextBlock,
-            Feature
-        },
+            Price
+    },
         data() {
             return {
                 texts: {
@@ -49,9 +49,9 @@
                     ]
                 },
                 //todo Добавить ссылки
-                features: {
-                    feature_1: {
-                        img: require('../../assets/img/features/image_1.jpg'),
+                prices: {
+                    price_1: {
+                        img: require('../../assets/img/prices/image_1.jpg'),
                         title: 'МК «Архитектура бровей»',
                         price: '12000р',
                         text: [
@@ -67,8 +67,8 @@
                             text: 'Подробнее'
                         }
                     },
-                    feature_2: {
-                        img: require('../../assets/img/features/image_2.jpg'),
+                    price_2: {
+                        img: require('../../assets/img/prices/image_2.jpg'),
                         title: 'Базовый курс «ВИЗАЖИСТ»',
                         price: '35000р',
                         text: [
@@ -81,8 +81,8 @@
                             text: 'Подробнее'
                         }
                     },
-                    feature_3: {
-                        img: require('../../assets/img/features/image_3.jpg'),
+                    price_3: {
+                        img: require('../../assets/img/prices/image_3.jpg'),
                         title: '«Makeup — уроки для себя»',
                         price: '5000р',
                         text: [
@@ -131,7 +131,7 @@
             .size-md(12);
         }
 
-        &__feature {
+        &__price {
             .size(4);
             .size-sm(12);
             margin-bottom: 40px;

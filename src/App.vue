@@ -4,6 +4,24 @@
         <router-view class="app__main"/>
         <PageFooter class="app__footer"/>
         <modal/>
+        <!--<div class="debug">-->
+            <!--<div>-->
+                <!--<div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                    <!--<div></div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
 </template>
 

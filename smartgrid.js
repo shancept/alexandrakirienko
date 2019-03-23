@@ -17,11 +17,11 @@ var settings = {
         },
         md: {
             'width': '960px',
-            'fields': '30px'
+            'fields': '160px'
         },
         sm: {
             'width': '780px',
-            'fields': '40px'
+            'fields': '160px'
         },
         xs: {
             'width': '560px',

@@ -58,7 +58,7 @@
     import 'swiper/dist/css/swiper.css';
     import {swiper, swiperSlide} from 'vue-awesome-swiper';
     import TextBlock from './../blocks/TextBlock';
-    import Feature from './../blocks/Feature';
+    import Feature from '../blocks/Price';
 
     export default {
         name: "WeddingPage",

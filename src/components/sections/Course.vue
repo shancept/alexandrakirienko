@@ -1,5 +1,5 @@
 <template>
-    <div class="course">
+    <section class="course">
         <div class="course__container">
             <div class="course__row  course__text-block">
                 <div class="course__item  course__item-text">
@@ -28,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script>
@@ -47,7 +47,7 @@
 
 <style lang="less">
     .course {
-        padding: 60px 0;
+        padding: 30px 0;
 
         &__container{
             .wrapper();
@@ -100,7 +100,7 @@
             text-align: center;
         }
         &__img-block {
-            padding: 80px 0;
+            padding-top: 60px;
             justify-content: center;
         }
         &__img-item {

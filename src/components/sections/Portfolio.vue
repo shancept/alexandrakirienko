@@ -1,5 +1,4 @@
 <template>
-    <!--todo ширина экрана через js-->
     <section class="portfolio">
         <div class="portfolio__container">
             <div class="portfolio__row">
@@ -127,6 +126,9 @@
                 height: 100%;
                 object-fit: cover;
             }
+
+            .sm-block({ width: 460px; height: 300px; });
+            .xs-block({ width: 300px; height: 235px; });
         }
 
         &__slide-btn {

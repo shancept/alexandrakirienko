@@ -57,8 +57,8 @@
         }
         &__text {
             font-size: 18px;
-            .md-block({ font-size: 14px; });
-            .xs-block({ font-size: 12px; });
+            //.md-block({ font-size: 14px; });
+            //.xs-block({ font-size: 12px; });
         }
 
         &--no-margin {

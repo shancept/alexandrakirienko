@@ -1,64 +1,44 @@
 <template>
     <div class="feature">
-        <div class="feature__img">
-            <img :src="featureData.img" alt="Изображение">
+        <div class="feature__head-block">
+            <img :src="feature.img" alt="Изображение">
+            <h3>{{feature.title}}</h3>
         </div>
-        <h3 class="feature__title">{{featureData.title}}</h3>
-        <div class="feature__price">{{featureData.price}}</div>
-        <text-block
-                :text="featureData.text"
-                modifier="no-margin"
-        />
-        <btn
-                class="feature__btn"
-                :href="featureData.btn.href"
-                :title="featureData.btn.text"
-        />
+        <div class="feature__text-block">
+            <text-block :text="feature.text"/>
+        </div>
     </div>
 </template>
 
 <script>
-    import TextBlock from './TextBlock';
-    import Btn from './Btn';
+    import TextBlock from './../blocks/TextBlock';
 
     export default {
         name: "Feature",
         components: {
-            TextBlock,
-            Btn
+            TextBlock
         },
         props: {
-            featureData: Object
-        },
+            feature: Object
+        }
     }
 </script>
 
 <style lang="less">
     .feature {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-
-        &__img {
-            margin-bottom: 10px;
+        &__head-block{
+            display: flex;
+            align-items: center;
 
             img {
-                width: 100%;
-                object-fit: cover;
-                /*object-position: top center;*/
+                width: 35px;
+                margin-right: 15px;
+            }
+
+            h3 {
+                font-size: 18px;
             }
         }
-        &__title {
-            margin: 0;
-        }
-        &__price {
-            color: #fbcfc4;
-        }
-        &__text {
-        }
-        &__btn {
-            width: 140px;
-            margin-top: auto;
-        }
+        &__text-block{}
     }
 </style>
