@@ -17,10 +17,9 @@
                     />
                 </div>
                 <div class="page-header__item  page-header__item--logo">
-                    <!--todo ссылка-->
-                    <a href="#">
+                    <router-link to="/">
                         <img src="../../assets/img/header/logo.png" alt="logo">
-                    </a>
+                    </router-link>
                 </div>
                 <div class="page-header__item  page-header__item--write">
                     <btn href="#" title="Написать"/>

@@ -9,7 +9,7 @@
             </p>
             <div class="course-rec__btn">
                 <!--todo cссылка на курс-->
-                <btn href="/qwe" modifier="second" title="Узнать подробнее"/>
+                <btn href="#" modifier="second" title="Узнать подробнее"/>
             </div>
         </div>
     </sweet-modal>

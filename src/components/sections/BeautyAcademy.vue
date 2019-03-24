@@ -133,14 +133,13 @@
 
         &__price {
             .size(4);
-            .size-sm(12);
+            .size-md(12);
             margin-bottom: 40px;
 
 
             img {
                 height: 240px;
-                .lg-block({height: 200px;});
-                .sm-block({height: 100%;});
+                .md-block({height: 100%;});
             }
         }
     }

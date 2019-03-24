@@ -65,7 +65,9 @@
         }
 
         &__text-block {
-            .size(12);
+            .size(8);
+            .size-md(12);
+            padding-bottom: 60px;
         }
         &__item {
             .col();
