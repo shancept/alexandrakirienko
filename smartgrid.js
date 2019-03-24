@@ -21,7 +21,7 @@ var settings = {
         },
         sm: {
             'width': '780px',
-            'fields': '160px'
+            'fields': '40px'
         },
         xs: {
             'width': '560px',

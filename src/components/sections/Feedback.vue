@@ -21,7 +21,18 @@
                         :style="findError('phone') !== false ? {'border-bottom': '1px solid red'} : ''"
                         @input="errors.splice('phone', 1)"
                         v-model="phone"> <br>
+                <!--todo Валидация email (Кстати, твои br-ки убивают vue!)-->
+                <input
+                        v-if="isMail"
+                        class="feedback__form-item"
+                        type="email"
+                        name="email"
+                        placeholder="Ваш email"
+                        :style="findError('email') !== false ? {'border-bottom': '1px solid red'} : ''"
+                        @input="errors.splice('email', 1)"
+                        v-model="email">
                 <textarea
+                        v-else
                         class="feedback__form-item"
                         name="message"
                         placeholder="Ваше предложение"
@@ -64,6 +75,10 @@
             btn: {
                 type: Object,
                 default() { return {}}
+            },
+            isMail: {
+                type: Boolean,
+                default: false
             }
         },
         data() {
@@ -71,6 +86,7 @@
                 name: '',
                 phone: '',
                 message: '',
+                email: '',
                 errors: [],
                 formSuccess: false
             }
@@ -91,6 +107,7 @@
                     fd.append('name', this.name);
                     fd.append('phone', this.phone);
                     fd.append('message', this.message);
+                    fd.append('email', this.email);
 
                     axios.post('/api/feedback', fd, {
                         headers: {
@@ -109,6 +126,9 @@
                 }
                 if(this.phone.trim().length === 0) {
                     this.errors.push({phone: 'Телефон не должно быть пустым'});
+                }
+                if(this.email.trim().length === 0) {
+                    this.errors.push({email: 'Почта не должна быть пустой'});
                 }
             },
             findError(type) {
@@ -181,6 +201,7 @@
             max-width: 560px;
             margin: 0 auto;
             &--white &-item {
+                color: #fff;
                 border-bottom: 1px solid #e6e6e6;
             }
         }

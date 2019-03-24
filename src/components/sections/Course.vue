@@ -11,7 +11,7 @@
                 <div class="course__item  course__item-price">
                     <div class="course__price">
                         <h3>{{courseData.note.title}}</h3>
-                        <span>{{courseData.note.title}}</span>
+                        <span>{{courseData.note.text}}</span>
                     </div>
                     <span class="course__note">*при отказе от курса предоплата не возвращается</span>
                 </div>
@@ -89,6 +89,7 @@
             }
 
             span {
+                display: block;
                 margin: 0;
                 font-size: 16px;
             }

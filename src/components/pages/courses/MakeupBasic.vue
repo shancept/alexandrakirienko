@@ -1,17 +1,9 @@
 <template>
     <main class="makeup-basic">
-        <course :courseData="courseData"/>
-        <div class="makeup-basic__features">
-            <div class="makeup-basic__container">
-                <div class="makeup-basic__row">
-                    <div v-for="(feature, key) in features" :key="key" class="makeup-basic__item  makeup-basic__feature">
-                        <feature :feature="feature"/>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <section class="makeup-basic">
-            <div class="makeup-basic__container">
+        <course class="makeup-basic__course" :courseData="courseData"/>
+        <features class="makeup-basic__features" :features="features"/>
+        <program class="makeup-basic__program" :program="program"/>
+        <section class="makeup-basic__masonry">
                 <masonry
                     :cols="{default: 4, 1100: 3, 960: 2, 560: 1}"
                     :gutter="10"
@@ -20,23 +12,30 @@
                         <img :src="image" alt="Изображение">
                     </div>
                 </masonry>
-            </div>
         </section>
-        <feedback class="makeup-basic__feedback"/>
+        <feedback
+                class="makeup-basic__feedback"
+                title="Записаться на курсы"
+                info="Администратор свяжется с вами для подтверждения <br>
+бронирования места в группе"
+                :isMail="true"
+        />
     </main>
 </template>
 
 <script>
     import Course from './../../sections/Course';
     import Feedback from './../../sections/Feedback';
-    import Feature from './../../blocks/Feature';
+    import Features from './../../sections/Features';
+    import Program from './../../sections/Program';
 
     export default {
         name: "MakeupBasic",
         components: {
             Course,
             Feedback,
-            Feature
+            Features,
+            Program
         },
         data() {
             return {
@@ -94,6 +93,94 @@
                             'После прохождения курса, каждый студент получает диплом академии красоты Александры Кириенко и несколько профессиональных, качественно отснятых и обработанных фотографий для своего портфолио.'
                         ]
                     }
+                ],
+                program: [
+                    {
+                        title: 'Теория',
+                        list: [
+                            '12:00 - 16:00',
+                            'Введение в профессию, общая теория'
+                        ]
+                    },
+                    {
+                        title: 'Экспресс макияж',
+                        list: [
+                            '12:00-14:00 теория, формы лица,коррекция \n',
+                            '14:00-15:00 кофе-брейк \n',
+                            '15:00-16:00 показ \n',
+                            '16:00-18:00 отработка на моделях '
+                        ]
+                    },
+                    {
+                        title: 'Дневной макияж в теневой технике',
+                        list: [
+                            '12:00-14:00 морфология глаз+брови \n',
+                            '14:00-15:00 кофе-брейк \n',
+                            '15:00-17:00 показ \n',
+                            '17:00-19:00 отработка на моделях '
+                        ]
+                    },
+                    {
+                        title: 'Вечерний макияж в карандашной технике',
+                        list: [
+                            '12:00-14:00 колористика \n',
+                            '14:00-15:00 кофе-брейк \n',
+                            '15:00-17:00 показ \n',
+                            '17:00-19:00 отработка на моделях'
+                        ]
+                    },
+                    {
+                        title: 'Смоки',
+                        list: [
+                            '12:00-14:00 показ \n',
+                            '14:00-15:00 кофе-брейк \n',
+                            '15:00-18:00 отработка на моделях'
+                        ]
+                    },
+                    {
+                        title: 'Свадебный макияж',
+                        list: [
+                            '12:00-13:00 теория \n',
+                            '13:00-15:00 показ \n',
+                            '15:00-16:00 кофе-брейк \n',
+                            '16:00-19:00 отработка на моделях '
+                        ]
+                    },
+                    {
+                        title: 'Hollywood',
+                        list: [
+                            '12:00-14:00 показ \n',
+                            '14:00-15:00 кофе-брейк \n',
+                            '15:00-18:00 отработка на моделях '
+                        ]
+                    },
+                    {
+                        title: 'Insta-мэйк',
+                        list: [
+                            '12:00-13:00 теория \n',
+                            '13:00-15:00 показ \n',
+                            '15:00-16:00 кофе-брейк \n',
+                            '16:00-19:00 отработка на моделях'
+                        ]
+                    },
+                    {
+                        title: 'Возрастной макияж',
+                        list: [
+                            'Начало в 12:00 \n',
+                            '12:00-14:00 показ \n',
+                            '14:00-15:00 кофе-брейк \n',
+                            '15:00-18:00 отработка на моделях'
+                        ]
+                    },
+                    {
+                        title: 'Экспресс макияж',
+                        list: [
+                            'Начало в 12:00 \n',
+                            '12:00-14:00 макияж для моделей \n',
+                            '14:00-15:00 фото \n',
+                            '15:00-16:00 вручение дипломов, шампанское'
+                        ]
+                    },
                 ]
             }
         }
@@ -102,23 +189,15 @@
 
 <style lang="less">
     .makeup-basic {
-        &__container{
+        &__masonry {
             .wrapper();
         }
-        &__row{
-            .row-flex();
-            justify-content: space-between;
-        }
-        &__item{
-            margin-top: 10px;
-            .col();
-        }
         &__features {
-            padding: 60px 0;
+            padding-bottom: 40px;
         }
-        &__feature {
-            .size(5.8);
-            .size-md(12);
+        &__program {
+            padding: 140px 0;
+            background-color: #fff;
         }
     }
 </style>
