@@ -11,7 +11,7 @@
         />
         <btn
                 class="price__btn"
-                :href="priceData.btn.href"
+                :to="priceData.btn.href"
                 :title="priceData.btn.text"
         />
     </div>

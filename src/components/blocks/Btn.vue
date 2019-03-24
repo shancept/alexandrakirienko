@@ -1,9 +1,10 @@
 <template>
-    <a
+    <router-link
+            :to="to"
             class="btn"
             :class="modifierClass"
             @click="clickBtn()"
-    >{{title}}</a>
+    >{{title}}</router-link>
 </template>
 
 <script>
@@ -11,7 +12,11 @@
         name: "Btn",
         props: {
             'title': String,
-            'modifier': null
+            'modifier': null,
+            'to': {
+                type: String,
+                default: ''
+            }
         },
         computed: {
             modifierClass() {
