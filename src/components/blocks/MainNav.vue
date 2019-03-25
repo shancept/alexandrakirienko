@@ -11,7 +11,7 @@
                 <a class="main-nav__link">Коллаборации</a>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link">Биография</a>
+                <router-link to="/biography" class="main-nav__link">Биография</router-link>
             </li>
             <li class="main-nav__item">
                 <a class="main-nav__link">Сотрудничество</a>
@@ -71,5 +71,15 @@
                 }
             }
         }
+    }
+    .router-link-active, .router-link-exact-active {
+        opacity: .8;
+        color: #545454 !important;
+        text-decoration: underline;
+
+        &:hover {
+            color: #545454 !important;
+        }
+
     }
 </style>

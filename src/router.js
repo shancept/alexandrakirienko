@@ -13,6 +13,7 @@ Vue.use(Router)
 
 export default new Router({
     mode: 'history',
+    base: process.env.BASE_URL,
     routes: [
         { path: '/', component: GeneralPage },
         { path: '/wedding', component: WeddingPage },
@@ -22,7 +23,7 @@ export default new Router({
         { path: '/courses/makeup-for-yourself', component: MakeupForYourself },
         { path: '*', component: Error404 },
     ],
-    scrollBehavior (to, from, savedPosition) {
+    scrollBehavior () {
         return { x: 0, y: 0 }
     }
 })

@@ -17,7 +17,7 @@
                     />
                 </div>
                 <div class="page-header__item  page-header__item--logo">
-                    <router-link to="/">
+                    <router-link to="/" exact>
                         <img src="../../assets/img/header/logo.png" alt="logo">
                     </router-link>
                 </div>
