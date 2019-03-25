@@ -1,10 +1,18 @@
 <template>
-    <router-link
-            :to="to"
+    <router-link v-if="false !== to"
+                 :to="to"
+                 class="btn"
+                 :class="modifierClass"
+                 @click="clickBtn()"
+    >{{title}}
+    </router-link>
+    <a
+            v-else
             class="btn"
             :class="modifierClass"
-            @click="clickBtn()"
-    >{{title}}</router-link>
+            @click="clickBtn()">
+        {{title}}
+    </a>
 </template>
 
 <script>
@@ -14,8 +22,7 @@
             'title': String,
             'modifier': null,
             'to': {
-                type: String,
-                default: ''
+                default: false
             }
         },
         computed: {

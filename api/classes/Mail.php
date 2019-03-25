@@ -60,7 +60,7 @@ class Mail
         if (isset($feedback['email'])) $html .= '<p>Email: ' . $feedback['email'] . '</p>';
         if (isset($feedback['city'])) $html .= '<p>Город: ' . $feedback['city'] . '</p>';
         if (isset($feedback['message'])) $html .= '<p>Текст: ' . $feedback['message'] . '</p>';
-        if (isset($feedback['email'])) $html .= '<p>Дата: ' . $feedback->date . '</p>';
+        if (isset($feedback['date'])) $html .= '<p>Дата: ' . $feedback['date'] . '</p>';
         return $html;
     }
 }

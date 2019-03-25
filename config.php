@@ -9,9 +9,9 @@
 return [
     'db' => [
         'mysql' => 'mysql:host=localhost',
-        'dbname' => 'ch64153_alex',
-        'user' => 'ch64153_alex',
-        'pass' => '5rrDjZpY',
+        'dbname' => 'alex',
+        'user' => 'root',
+        'pass' => 'root',
     ],
     'mail' => [
         'host' => 'smtp.yandex.ru',

@@ -12,7 +12,7 @@
                         placeholder="Ваше имя"
                         :style="findError('name') !== false ? {'border-bottom': '1px solid red'} : ''"
                         @input="errors.splice('name', 1)"
-                        v-model="name"> <br>
+                        v-model="name">
                 <input
                         class="feedback__form-item"
                         type="text"
@@ -20,8 +20,7 @@
                         placeholder="Телефон для связи"
                         :style="findError('phone') !== false ? {'border-bottom': '1px solid red'} : ''"
                         @input="errors.splice('phone', 1)"
-                        v-model="phone"> <br>
-                <!--todo Валидация email (Кстати, твои br-ки убивают vue!)-->
+                        v-model="phone">
                 <input
                         v-if="isMail"
                         class="feedback__form-item"
@@ -38,8 +37,8 @@
                         placeholder="Ваше предложение"
                         cols="30"
                         rows="4"
-                        v-model="message">Ваше предложение</textarea> <br>
-                <span class="feedback__error" v-if="errors.length === 2">Заполните пустые поля</span>
+                        v-model="message">Ваше предложение</textarea>
+                <span class="feedback__error" v-if="errors.length >= 2">Заполните пустые поля</span>
                 <btn
                         @click-btn="send"
                         class="feedback__btn"
@@ -151,6 +150,7 @@
                 -webkit-linear-gradient(top, rgba(247, 244, 239, 1), rgba(247, 244, 239, 0.90)),
                 url("./../../assets/img/feedback/background.jpg") fixed;
 
+
         &__container {
             .wrapper();
         }
@@ -207,6 +207,7 @@
         }
         &__form-item {
             width: 100%;
+            margin-bottom: 10px;
             padding: 20px 0;
             font-size: 16px;
             line-height: 1.33;
