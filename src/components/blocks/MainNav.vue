@@ -75,7 +75,15 @@
     .router-link-active, .router-link-exact-active {
         opacity: .8;
         color: #545454 !important;
-        text-decoration: underline;
+        text-decoration: none;
+
+        &::after {
+            display: none;
+        }
+
+        &:focus {
+            text-decoration: none;
+        }
 
         &:hover {
             color: #545454 !important;

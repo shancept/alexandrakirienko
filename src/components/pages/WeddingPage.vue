@@ -18,8 +18,8 @@
             <div class="wedding-page__features">
                 <div class="wedding-page__row">
                     <div v-for="(feature, key) in features" :key="key" class="wedding-page__item  wedding-page__feature">
-                        <feature
-                                :featureData="feature"
+                        <price
+                                :priceData="feature"
                         />
                     </div>
                 </div>
@@ -58,7 +58,7 @@
     import 'swiper/dist/css/swiper.css';
     import {swiper, swiperSlide} from 'vue-awesome-swiper';
     import TextBlock from './../blocks/TextBlock';
-    import Feature from '../blocks/Price';
+    import Price from '../blocks/Price';
 
     export default {
         name: "WeddingPage",
@@ -66,7 +66,7 @@
             swiper,
             swiperSlide,
             TextBlock,
-            Feature
+            Price
         },
         data() {
             return {
