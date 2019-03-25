@@ -1,6 +1,5 @@
 <template>
     <section class="wedding">
-        <!--todo доделать адаптивку и плиточный блок-->
         <div class="wedding__container">
             <div class="wedding__row">
                 <div class="wedding__item  wedding__text-block">
@@ -95,12 +94,10 @@
             .shift-left(2);
             .shift-md-left(0);
             .md-block({ order: 3;});
-            .sm-block({ display: none; });
 
         }
         &__img-block {
             .size(12);
-            //.row-flex();
             .md-block({ order: 2;});
             display: flex;
             flex-wrap: wrap;
@@ -127,10 +124,10 @@
             .size(4);
             .size-lg(6);
             .size-sm(12);
-            //.row-flex();
             display: flex;
             flex-wrap: wrap;
             max-height: 600px;
+            .sm-block({ max-height: none; });
         }
         &__img-right-1 {
             .col();

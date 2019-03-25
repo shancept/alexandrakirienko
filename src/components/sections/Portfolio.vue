@@ -92,6 +92,7 @@
 
 <style lang="less">
     .portfolio {
+        padding-bottom: 80px;
         &__container {
             .wrapper();
         }
@@ -104,6 +105,7 @@
 
         &__text-block {
             .size(8);
+            .size-md(12);
             margin-bottom: 40px;
         }
 

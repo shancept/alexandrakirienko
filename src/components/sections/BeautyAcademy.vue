@@ -63,7 +63,7 @@
                             '- практика'
                         ],
                         btn: {
-                            href: '#',
+                            href: '/courses/mc-arhitect',
                             text: 'Подробнее'
                         }
                     },
@@ -77,7 +77,7 @@
                             'Базовый курс: от введения в профессию и общих знаний, до голливудских техник и возрастного макияжа. Отработка на моделях каждый день.'
                         ],
                         btn: {
-                            href: '#',
+                            href: '/courses/makeup-basic',
                             text: 'Подробнее'
                         }
                     },
@@ -91,7 +91,7 @@
                             'Программа курса это базис - дневной и вечерний макияж, и конечно - секреты.'
                         ],
                         btn: {
-                            href: '#',
+                            href: '/courses/makeup-for-yourself',
                             text: 'Подробнее'
                         }
                     }
@@ -133,14 +133,13 @@
 
         &__price {
             .size(4);
-            .size-sm(12);
+            .size-md(12);
             margin-bottom: 40px;
 
 
             img {
                 height: 240px;
-                .lg-block({height: 200px;});
-                .sm-block({height: 100%;});
+                .md-block({height: 100%;});
             }
         }
     }

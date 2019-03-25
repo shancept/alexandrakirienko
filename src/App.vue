@@ -26,13 +26,6 @@
 </template>
 
 <script>
-    /*todo публикации и обложки: ширина текста и отступ сверху
-    * todo портфолио мобильный текст и слайдер
-    * todo свадьба мобилка ширина текста и вернуть кнопку
-    * todo академия красоты айфон перевернутый медиазапрос
-    *
-    * */
-
     import PageHeader from './components/header/Index';
     import PageFooter from './components/footer/Index';
     import Modal from './components/modal/CourseRec'
