@@ -18,6 +18,12 @@ export default new Router({
         { path: '/', component: GeneralPage },
         { path: '/wedding', component: WeddingPage },
         { path: '/biography', component: Biography },
+
+        { path: '/portfolio', component: GeneralPage },
+        { path: '/beauty-academy', component: GeneralPage },
+        { path: '/integration', component: GeneralPage },
+        { path: '/feedback', component: GeneralPage },
+
         { path: '/courses/makeup-basic', component: MakeupBasic },
         { path: '/courses/mc-arhitect', component: McArhitect },
         { path: '/courses/makeup-for-yourself', component: MakeupForYourself },

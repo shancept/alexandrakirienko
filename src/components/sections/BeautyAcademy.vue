@@ -1,5 +1,5 @@
 <template>
-    <section class="beauty-academy">
+    <section id="beauty-academy" class="beauty-academy">
         <div class="beauty-academy__container">
 
             <div class="beauty-academy__text-block">

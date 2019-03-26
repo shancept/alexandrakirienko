@@ -1,5 +1,5 @@
 <template>
-    <section class="integration">
+    <section id="integration" class="integration">
         <div class="integration__text-block">
             <div class="integration__container">
                 <text-block
