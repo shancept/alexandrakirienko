@@ -50,8 +50,11 @@
         }
         &__title {
             margin: 0;
+            font-size: 26px;
         }
         &__price {
+            font-size: 20px;
+            font-weight: 700;
             color: #fbcfc4;
         }
         &__text {
