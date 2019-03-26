@@ -4,43 +4,45 @@
             <div class="publications__row">
                 <div class="publications__item  publications__text-block">
                     <text-block
-                        title="Публикации & обложки"
-                        :text="text_1"
+                            title="Публикации & обложки"
+                            :text="text_1"
                     />
                 </div>
             </div>
             <div class="publications__row">
+                <gallery :images="images" :index="index" @close="index = null"></gallery>
+
+                <!--<div-->
+                    <!--v-for="(image, num) in images"-->
+                    <!--:key="num"-->
+                    <!--class="publications__item"-->
+                    <!--:class="'publications__media-' + (num + 1)"-->
+                    <!--@click="index = num"-->
+                <!--&gt;-->
+                    <!--<img :src="image" alt="image">-->
+                <!--</div>-->
+
+
                 <div class="publications__item  publications__media-1">
-                    <img src="../../assets/img/publications/image_1.png" alt="image">
+                    <img src="../../assets/img/publications/image_1.png" alt="image" @click="index = 0">
                 </div>
                 <div class="publications__item  publications__media-2">
-                    <img src="../../assets/img/publications/image_2.png" alt="image">
+                    <img src="../../assets/img/publications/image_2.png" alt="image" @click="index = 1">
                 </div>
                 <div class="publications__item  publications__media-3">
-                    <img src="../../assets/img/publications/image_3.png" alt="image">
+                    <img src="../../assets/img/publications/image_3.png" alt="image" @click="index = 2">
                 </div>
                 <div class="publications__item  publications__media-4">
-                    <img src="../../assets/img/publications/image_4.png" alt="image">
+                    <img src="../../assets/img/publications/image_4.png" alt="image" @click="index = 3">
                 </div>
                 <div class="publications__item  publications__media-5">
-                    <img src="../../assets/img/publications/image_5.png" alt="image">
+                    <img src="../../assets/img/publications/image_5.png" alt="image" @click="index = 4">
                 </div>
                 <div class="publications__item  publications__media-6">
-                    <img src="../../assets/img/publications/image_6.png" alt="image">
-                    <img class="publications__ghost-img" src="../../assets/img/publications/image_5.png" alt="image">
+                    <img src="../../assets/img/publications/image_6.png" alt="image" @click="index = 5">
+                    <img class="publications__ghost-img" src="../../assets/img/publications/image_5.png" alt="image" @click="index = 4">
                 </div>
             </div>
-            <!--<div class="foo">-->
-                <!---->
-                <!--<gallery :images="images" :index="index" @close="index = null"></gallery>-->
-                <!--<div-->
-                    <!--class="image"-->
-                    <!--v-for="(image, imageIndex) in images"-->
-                    <!--:key="imageIndex"-->
-                    <!--@click="index = imageIndex"-->
-                    <!--:style="{ backgroundImage: 'url(' + image + ')', width: '300px', height: '200px' }"-->
-                <!--&gt;</div>-->
-            <!--</div>-->
         </div>
     </section>
 </template>
@@ -61,10 +63,12 @@
                     'На страницах и обложках глянцевых изданий, в популярных блогах и на модных интернет-ресурсах я всегда делюсь самым сокровенным — своим личным опытом. Я с удовольствием раскрываю секреты работы, карьеры и жизни.'
                 ],
                 images: [
-                    'https://dummyimage.com/800/ffffff/000000',
-                    'https://dummyimage.com/1600/ffffff/000000',
-                    'https://dummyimage.com/1280/000000/ffffff',
-                    'https://dummyimage.com/400/000000/ffffff',
+                    require('../../assets/img/publications/image_1.png'),
+                    require('../../assets/img/publications/image_2.png'),
+                    require('../../assets/img/publications/image_3.png'),
+                    require('../../assets/img/publications/image_4.png'),
+                    require('../../assets/img/publications/image_5.png'),
+                    require('../../assets/img/publications/image_6.png'),
                 ],
                 index: null
             }
