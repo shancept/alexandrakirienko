@@ -16,7 +16,7 @@
                     />
                     <btn
                         class="wedding__btn"
-                        href="#"
+                        to="/wedding"
                         title="Узнать подробнее"
                         modifier="second"
                     />

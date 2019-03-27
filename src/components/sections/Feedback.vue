@@ -1,5 +1,5 @@
 <template>
-    <section class="feedback">
+    <section id="feedback" class="feedback">
         <div class="feedback__container">
             <h3 class="feedback__title" :class="titleColor">{{title}}</h3>
             <p class="feedback__info" :class="infoColor" v-html="info"></p>

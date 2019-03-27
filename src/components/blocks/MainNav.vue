@@ -2,19 +2,19 @@
     <nav class="main-nav">
         <ul class="main-nav__list">
             <li class="main-nav__item">
-                <a class="main-nav__link">Портфолио</a>
+                <router-link to="/portfolio" class="main-nav__link" v-scroll-to="'#portfolio'">Портфолио</router-link>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link">Обучение</a>
+                <router-link to="/beauty-academy" class="main-nav__link" v-scroll-to="'#beauty-academy'">Обучение</router-link>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link">Коллаборации</a>
+                <router-link to="/integration" class="main-nav__link" v-scroll-to="'#integration'">Коллаборации</router-link>
             </li>
             <li class="main-nav__item">
                 <router-link to="/biography" class="main-nav__link">Биография</router-link>
             </li>
             <li class="main-nav__item">
-                <a class="main-nav__link">Сотрудничество</a>
+                <router-link to="/feedback" class="main-nav__link" v-scroll-to="'#feedback'">Сотрудничество</router-link>
             </li>
         </ul>
     </nav>
