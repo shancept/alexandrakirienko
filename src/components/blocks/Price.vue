@@ -11,6 +11,7 @@
         />
         <btn
                 class="price__btn"
+                @click-btn="click"
                 :to="priceData.btn.href"
                 :title="priceData.btn.text"
         />
@@ -30,6 +31,11 @@
         props: {
             priceData: Object
         },
+        methods: {
+            click() {
+                this.$store.state.modal = true
+            }
+        }
     }
 </script>
 

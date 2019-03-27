@@ -2,9 +2,8 @@
     <router-link v-if="false !== to"
                  :to="to"
                  class="btn"
-                 :class="modifierClass"
-                 @click="clickBtn()"
-    >{{title}}
+                 :class="modifierClass">
+        {{title}}
     </router-link>
     <a
             v-else

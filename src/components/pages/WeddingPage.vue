@@ -51,6 +51,7 @@
                 </swiper>
             </div>
         </div>
+        <wedding-feedback/>
     </main>
 </template>
 
@@ -59,6 +60,7 @@
     import {swiper, swiperSlide} from 'vue-awesome-swiper';
     import TextBlock from './../blocks/TextBlock';
     import Price from '../blocks/Price';
+    import WeddingFeedback from '../modal/WeddingFeedback'
 
     export default {
         name: "WeddingPage",
@@ -66,7 +68,8 @@
             swiper,
             swiperSlide,
             TextBlock,
-            Price
+            Price,
+            WeddingFeedback
         },
         data() {
             return {
@@ -105,7 +108,6 @@
                             'Самое главное — невеста сможет привыкнуть к образу, чтобы в день свадьбы чувствовать себя спокойнее.'
                         ],
                         btn: {
-                            href: '#',
                             text: 'Заказать'
                         }
                     },
@@ -118,7 +120,6 @@
                             'Мы работаем только на профессиональной косметике премиального качества и используем самые трендовые техники.'
                         ],
                         btn: {
-                            href: '#',
                             text: 'Заказать'
                         }
                     },
@@ -131,7 +132,6 @@
                             'Безупречный образ и спокойствие невесты в день свадьбы – это то, к чему мы стремимся в своей работе.'
                         ],
                         btn: {
-                            href: '#',
                             text: 'Заказать'
                         }
                     }
@@ -152,7 +152,7 @@
                     require('./../../assets/img/weddingPage/image_13.png')
                 ]
             }
-        }
+        },
     }
 </script>
 
