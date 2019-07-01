@@ -3,13 +3,11 @@
         <img src="./../../assets/img/modal/lead.png" alt="modal image">
         <div class="course-rec__text-block">
             <h3 class="course-rec__title">Набор в группу уже открыт!</h3>
-            <p>Курс проходит на косметике студии класса ЛЮКС, выдается специально разработанное учебное пособие школы.
-                Кисти студенты приобретают самостоятельно. <br>
+            <p>Курс проходит на косметике студии класса ЛЮКС, выдается специально разработанное учебное пособие школы.<br>
                 <b>Экспресс группа 10 дней. Курс проходит в группе до 10 человек.</b>
             </p>
             <div class="course-rec__btn">
-                <!--todo cссылка на курс-->
-                <btn href="#" modifier="second" title="Узнать подробнее"/>
+                <btn href="/courses/makeup-basic" modifier="second" title="Узнать подробнее"/>
             </div>
         </div>
     </sweet-modal>
